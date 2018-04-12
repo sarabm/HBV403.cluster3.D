@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.awt.print.Book;
 
 @Entity
 @Table(name ="BOOKING")
@@ -18,7 +19,7 @@ public class Booking {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    private Long id;
+    private Long bookingNo;
 
 
     //gera foreign key's
@@ -36,11 +37,11 @@ public class Booking {
     }
 
     public Long getId() {
-        return id;
+        return bookingNo;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.bookingNo = id;
     }
     /*
     public Person getPersonID() {
@@ -70,7 +71,7 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking{" +
-                "id=" + id +
+                "id=" + bookingNo +
                 //", personID=" + personID +
                 // ", tripId=" + tripId +
                 ", noGuest=" + noGuest +

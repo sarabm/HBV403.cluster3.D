@@ -10,23 +10,28 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import javax.persistence.EntityManager;
+import java.util.List;
+
 public class DBManager {
 
     public static void main(String[] args) {
 
-        System.out.println(personControl());
+        System.out.println(addPerson());
 
-        System.out.println(reviewControl());
+        System.out.println(addReview());
 
-        System.out.println(tripControl());
+        System.out.println(addTrip());
 
-        System.out.println(bookingControl());
+        System.out.println(addBooking());
+
+        //getBooking();
 
 
     }
 
 
-    public static Person personControl() {
+    public static Person addPerson() {
         Configuration con = new Configuration().configure().addAnnotatedClass(Person.class);
 
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
@@ -51,7 +56,7 @@ public class DBManager {
         return sara;
     }
 
-    public static Review reviewControl(){
+    public static boolean addReview(){
 
         Configuration con = new Configuration().configure().addAnnotatedClass(Review.class);
 
@@ -71,11 +76,11 @@ public class DBManager {
         tx.commit();
         session.close();
 
-        return one;
+        return true;
 
     }
 
-    public static Trip tripControl() {
+    public static boolean addTrip() {
         Configuration con = new Configuration().configure().addAnnotatedClass(Trip.class);
 
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
@@ -95,10 +100,10 @@ public class DBManager {
         tx.commit();
         session.close();
 
-        return test;
+        return true;
     }
 
-    public static Booking bookingControl() {
+    public static boolean addBooking() {
         Configuration con = new Configuration().configure().addAnnotatedClass(Booking.class);
 
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
@@ -118,6 +123,40 @@ public class DBManager {
         tx.commit();
         session.close();
 
-        return test;
+        //setja inní try/catch
+        return true;
     }
+
+
+    //dæmi um hvernig við sækjum gögn úr booking með createQuery
+
+
+    /*
+    public static List<Booking> getBooking(Long id){
+
+        Configuration con = new Configuration().configure().addAnnotatedClass(Booking.class);
+
+        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+
+        SessionFactory sf = con.buildSessionFactory(reg);
+
+        Session session = sf.openSession();
+
+        session.beginTransaction();
+
+        List result = session.createQuery( "from Booking" ).list();
+        for ( Booking booking : (List<Booking>) result ) {
+            System.out.println( "Booking (" + booking.getNoGuest()+ ") : " + booking.getId());
+        }
+        session.getTransaction().commit();
+        session.close();
+
+        return result;
+    }
+    */
+
+    public static boolean deleteBooking(Long id){
+        return true;
+    }
+
 }
