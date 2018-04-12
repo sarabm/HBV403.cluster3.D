@@ -20,8 +20,6 @@ public class Booking {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     private Long bookingNo;
-
-
     //gera foreign key's
     // private Person personID;
     //private Long tripId;

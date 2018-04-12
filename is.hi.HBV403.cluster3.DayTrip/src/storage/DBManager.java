@@ -104,27 +104,32 @@ public class DBManager {
     }
 
     public static boolean addBooking() {
-        Configuration con = new Configuration().configure().addAnnotatedClass(Booking.class);
 
-        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+        SessionFactory factory = new Configuration()
+                                 .configure()
+                                 .addAnnotatedClass(Booking.class)
+                                 .buildSessionFactory();
 
-        SessionFactory sf = con.buildSessionFactory(reg);
+        Session session = factory.openSession();
 
-        Session session = sf.openSession();
+        try{
 
-        Transaction tx = session.beginTransaction();
+            Booking test = new Booking();
 
+            test.setNoGuest(5);
 
-        Booking test = new Booking();
+            session.beginTransaction();
 
-        test.setNoGuest(5);
+            session.save(test);
 
-        session.save(test);
-        tx.commit();
-        session.close();
+            session.getTransaction().commit();
 
-        //setja inní try/catch
-        return true;
+            //setja inní try/catch
+            return true;
+        }
+        finally {
+            factory.close();
+        }
     }
 
 
