@@ -2,22 +2,14 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
-@Table(name = "TRIP")
+@Table(name = "trip")
 public class Trip {
 
-
-
-        /**
-         * Viðfangsbreytur
-         */
 
         @Id
         @GeneratedValue(generator = "increment")
@@ -33,15 +25,15 @@ public class Trip {
         public boolean familyFriendly;
         public boolean coupleFriendly;
         public boolean groupFriendly;
+
+        //@OneToMany(mappedBy="trip", cascade = {CascadeType.ALL, CascadeType.MERGE, CascadeType.PERSIST})
         public ArrayList<Review> reviews;
         public  String tripLocation;
         public int availableSeats;
 
-        /**
-         * Smiður
-         */
 
         public Trip(){};
+
         public Trip(Long tripID, Date tripStartDate, Date tripEndDate, String tripDescription, double tripPrice,
                     int tripDifficulty, boolean wheelchairAccess, boolean familyFriendly, boolean coupleFriendly,
                     boolean goupFriendly, ArrayList<Review> reviews, String tripLocation, int availableSeats) {

@@ -5,105 +5,70 @@ import control.*;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
-import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class DBManager {
 
     public static void main(String[] args) {
 
-        System.out.println(addPerson());
+        //Búum til nýja ferð
+        /*
+        Trip trip = new Trip();
+        trip.availableSeats = 50;
+        trip.coupleFriendly = true;
+        trip.tripDifficulty = 9000;
+        trip.tripDescription = "bless";
+        */
 
-        System.out.println(addReview());
+        //Bætum henni við gagnagrunninn
+        //addTrip(trip);
 
-        System.out.println(addTrip());
+        //Sækjum allar ferðir í gagnagrunni
+        //List<Trip> trips = getAllTrips();
 
-        System.out.println(addBooking());
+        //Prentum út niðurstöður
+        /*
+        for ( Trip t : (List<Trip>) trips ) {
+            System.out.println(t);
+        }
+        */
 
-        //getBooking();
-
-
+        //Eyðum út ferðinni sem við bjuggum til áðan
+        //deleteTrip(trip.tripID);
     }
 
 
-    public static Person addPerson() {
-        Configuration con = new Configuration().configure().addAnnotatedClass(Person.class);
+    public static boolean addPerson(Person person) {
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Person.class)
+                .buildSessionFactory();
 
-        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+        Session session = factory.openSession();
 
-        SessionFactory sf = con.buildSessionFactory(reg);
+        try{
 
-        Session session = sf.openSession();
+            session.beginTransaction();
 
-        Transaction tx = session.beginTransaction();
+            session.save(person);
 
+            session.getTransaction().commit();
 
-        Person sara = new Person();
+            //setja inní try/catch
 
-        sara.setEmail("sbm5@hi.is");
-        sara.setFirstName("Sara");
-        sara.setLastName("Másdóttir");
-
-        session.save(sara);
-        tx.commit();
-        session.close();
-
-        return sara;
+        }
+        finally {
+            factory.close();
+            return true;
+        }
     }
 
-    public static boolean addReview(){
 
-        Configuration con = new Configuration().configure().addAnnotatedClass(Review.class);
-
-        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
-
-        SessionFactory sf = con.buildSessionFactory(reg);
-
-        Session session = sf.openSession();
-
-        Transaction tx = session.beginTransaction();
-
-
-        Review one = new Review();
-        one.setReviewText("Halló");
-
-        session.save(one);
-        tx.commit();
-        session.close();
-
-        return true;
-
-    }
-
-    public static boolean addTrip() {
-        Configuration con = new Configuration().configure().addAnnotatedClass(Trip.class);
-
-        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
-
-        SessionFactory sf = con.buildSessionFactory(reg);
-
-        Session session = sf.openSession();
-
-        Transaction tx = session.beginTransaction();
-
-
-        Trip test = new Trip();
-
-        test.groupFriendly = true;
-
-        session.save(test);
-        tx.commit();
-        session.close();
-
-        return true;
-    }
-
-    public static boolean addBooking() {
+    public static boolean addBooking(Booking booking) {
 
         SessionFactory factory = new Configuration()
                                  .configure()
@@ -114,13 +79,57 @@ public class DBManager {
 
         try{
 
-            Booking test = new Booking();
+            session.beginTransaction();
 
-            test.setNoGuest(5);
+            session.save(booking);
+
+            session.getTransaction().commit();
+
+            //setja inní try/catch
+
+        }
+        finally {
+            factory.close();
+            return true;
+        }
+    }
+
+    public static boolean addTrip(Trip trip) {
+
+        SessionFactory factory = new Configuration()
+                                 .configure()
+                                 .addAnnotatedClass(Trip.class)
+                                 .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        try{
 
             session.beginTransaction();
 
-            session.save(test);
+            session.save(trip);
+
+            session.getTransaction().commit();
+        }
+        finally {
+            factory.close();
+            return true;
+        }
+    }
+
+    public static boolean addReview(Review review) {
+
+        SessionFactory factory = new Configuration()
+                                 .configure()
+                                 .addAnnotatedClass(Review.class)
+                                 .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        try{
+            session.beginTransaction();
+
+            session.save(review);
 
             session.getTransaction().commit();
 
@@ -132,36 +141,155 @@ public class DBManager {
         }
     }
 
+    public static boolean deleteTrip(Long tripId) {
 
-    //dæmi um hvernig við sækjum gögn úr booking með createQuery
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Booking.class)
+                .buildSessionFactory();
 
+        Session session = factory.openSession();
 
-    /*
-    public static List<Booking> getBooking(Long id){
+        session.beginTransaction();
+        try {
+            Trip trip = session.get(Trip.class, tripId);
 
-        Configuration con = new Configuration().configure().addAnnotatedClass(Booking.class);
+            session.delete(trip);
 
-        ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
+            session.getTransaction().commit();
+        }
+        finally {
+            factory.close();
+            return true;
+        }
+    }
 
-        SessionFactory sf = con.buildSessionFactory(reg);
+    public static boolean deleteBooking(Long bookingNo) {
 
-        Session session = sf.openSession();
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Booking.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+        try {
+            Booking booking = session.get(Booking.class, bookingNo);
+
+            session.delete(booking);
+
+            session.getTransaction().commit();
+        }
+        finally {
+            factory.close();
+            return true;
+        }
+    }
+
+    public static Booking getBooking(Long bookingNo){
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Booking.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
 
         session.beginTransaction();
 
-        List result = session.createQuery( "from Booking" ).list();
-        for ( Booking booking : (List<Booking>) result ) {
-            System.out.println( "Booking (" + booking.getNoGuest()+ ") : " + booking.getId());
-        }
+        Booking booking = session.get(Booking.class, bookingNo);
+
         session.getTransaction().commit();
         session.close();
+        return booking;
+    }
 
+    public static Person getPerson(String emailAddress){
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Person.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+
+        Person person = session.get(Person.class, emailAddress);
+
+        session.getTransaction().commit();
+        session.close();
+        return person;
+    }
+
+    public static Trip getTrip(Long tripId){
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Trip.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+
+         Trip trip = session.get(Trip.class, tripId);
+
+        session.getTransaction().commit();
+        session.close();
+        return trip;
+    }
+
+
+    public static Review getReview(Long reviewId){
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Review.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+
+        Review review = session.get(Review.class, reviewId);
+
+        session.getTransaction().commit();
+        session.close();
+        return review;
+    }
+
+
+    public static List<Trip> getAllTrips(){
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Trip.class)
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+
+        //List result = session.createQuery("from trip")getResultList();
+        // UPDATED: Create CriteriaBuilder
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+
+        // UPDATED: Create CriteriaQuery
+        CriteriaQuery<Trip> criteria = builder.createQuery(Trip.class);
+
+        // UPDATED: Specify criteria root
+        criteria.from(Trip.class);
+
+        // UPDATED: Execute query
+        List<Trip> result = session.createQuery(criteria).getResultList();
+
+        session.getTransaction().commit();
+        session.close();
         return result;
     }
-    */
 
-    public static boolean deleteBooking(Long id){
-        return true;
-    }
+
 
 }
