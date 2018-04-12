@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="cluster3_DDB@localhost">
+<dataSource name="hibernate.cfg.xml/Hibernate">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
@@ -918,7 +918,7 @@
     <table id="231" parent="2" name="PERSON">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="232" parent="2" name="REVIEW">
+    <table id="232" parent="2" name="REVEIW">
       <Engine>MyISAM</Engine>
     </table>
     <table id="233" parent="2" name="TRIP">
