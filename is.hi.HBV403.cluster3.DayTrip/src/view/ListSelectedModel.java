@@ -2,9 +2,11 @@ package view;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.SelectionModel;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -20,6 +22,7 @@ public class ListSelectedModel implements ChangeListener {
     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
         Parent root;
         Stage stage;
+        System.out.println(oldValue);
         stage = new Stage();
         if(!listController.isViewingTrip()) {
             try {

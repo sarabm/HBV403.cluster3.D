@@ -15,6 +15,7 @@ public class Trip {
         @GeneratedValue(generator = "increment")
         @GenericGenerator(name = "increment", strategy = "increment")
         public Long tripID;
+        public String tripName;
 
         public Date tripStartDate;
         public Date tripEndDate;
@@ -34,10 +35,11 @@ public class Trip {
 
         public Trip(){};
 
-        public Trip(Long tripID, Date tripStartDate, Date tripEndDate, String tripDescription, double tripPrice,
+        public Trip(Long tripID, String tripName, Date tripStartDate, Date tripEndDate, String tripDescription, double tripPrice,
                     int tripDifficulty, boolean wheelchairAccess, boolean familyFriendly, boolean coupleFriendly,
                     boolean goupFriendly, ArrayList<Review> reviews, String tripLocation, int availableSeats) {
             this.tripID = null;
+            this.tripName = tripName;
             this.tripStartDate = null;
             this.tripEndDate = null;
             this.tripDescription = tripDescription;
@@ -56,21 +58,7 @@ public class Trip {
 
         @Override
         public String toString() {
-            return "Trip{" +
-                    "tripID=" + tripID +
-                    ", tripStartDate=" + tripStartDate +
-                    ", tripEndDate=" + tripEndDate +
-                    ", tripDescription='" + tripDescription + '\'' +
-                    ", tripPrice=" + tripPrice +
-                    ", tripDifficulty=" + tripDifficulty +
-                    ", wheelchairAccess=" + wheelchairAccess +
-                    ", familyFriendly=" + familyFriendly +
-                    ", coupleFriendly=" + coupleFriendly +
-                    ", goupFriendly=" + groupFriendly +
-                    ", reviews=" + reviews +
-                    ", tripLocation='" + tripLocation + '\'' +
-                    ", availableSeats=" + availableSeats +
-                    '}';
+            return "" + tripName;
         }
 }
 

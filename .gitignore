@@ -5,3 +5,4 @@
 # ignore Intellij Idea project files
 .idea
 *.iml
+hibernate.cfg.xml
