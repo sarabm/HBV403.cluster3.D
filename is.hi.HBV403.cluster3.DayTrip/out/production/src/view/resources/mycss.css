@@ -1,0 +1,4 @@
+#img {
+    -fx-background-image: url("bahamas.jpg");
+    -fx-background-size: cover;
+}

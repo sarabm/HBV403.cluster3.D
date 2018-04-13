@@ -101,7 +101,7 @@ public class ListController implements Controller, Initializable {
 
     public void createTrip() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"List.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("CreateTripController.fxml"),"List.fxml");
     }
 
     @Override
@@ -119,6 +119,6 @@ public class ListController implements Controller, Initializable {
         setPriceList(minPrice);
         setNumbOfCustomers(numbOfCustomers);
         setDifficulty(difficulty);
-        //list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
+        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
     }
 }

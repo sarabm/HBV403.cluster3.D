@@ -26,7 +26,7 @@ public class SearchWindowController implements Controller{
     }
     public void createTrip() throws IOException {
         Stage stage = (Stage) forwardbutton.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"SearchWindow.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("CreateTripController.fxml"),"SearchWindow.fxml");
     }
 
     @Override
