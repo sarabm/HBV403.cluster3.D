@@ -156,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DBManager">
+  <component name="RunManager" selected="Application.DayTripUI">
     <configuration name="DBManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="storage.DBManager" />
       <module name="src" />
@@ -226,8 +226,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DBManager" />
         <item itemvalue="Application.DayTripUI" />
+        <item itemvalue="Application.DBManager" />
       </list>
     </recent_temporary>
   </component>
