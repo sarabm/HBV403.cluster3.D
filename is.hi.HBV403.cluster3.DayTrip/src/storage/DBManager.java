@@ -18,24 +18,20 @@ public class DBManager {
     public static void main(String[] args) {
 
         //Búum til nýja ferð
-
+        /*
         Trip trip = new Trip();
         trip.tripName = "Hestarferd";
         trip.availableSeats = 100;
         trip.coupleFriendly = true;
         trip.tripDifficulty = 9000;
-<<<<<<< HEAD
         trip.tripDescription = "bless";
-=======
         trip.tripDescription = "Segway-ferð um Reykjavík";
->>>>>>> 915b1d270ec4ca612f9748fa319ae985084ea5f0
-
+        */
 
         //Bætum henni við gagnagrunninn
-        addTrip(trip);
+        //addTrip(trip);
 
         //Sækjum allar ferðir í gagnagrunni
-<<<<<<< HEAD
        // List<Trip> trips = getAllTrips();
 
         //Prentum út niðurstöður
@@ -43,7 +39,6 @@ public class DBManager {
         /*for ( Trip t : (List<Trip>) trips ) {
             System.out.println(t);
         }*/
-=======
         List<Trip> trips = getAllTrips();
 
         //Prentum út niðurstöður
@@ -51,7 +46,6 @@ public class DBManager {
         for ( Trip t : (List<Trip>) trips ) {
             System.out.println(t);
         }
->>>>>>> 915b1d270ec4ca612f9748fa319ae985084ea5f0
 
 
         //Eyðum út ferðinni sem við bjuggum til áðan
