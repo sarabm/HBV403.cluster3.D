@@ -16,26 +16,27 @@ public class DBManager {
     public static void main(String[] args) {
 
         //Búum til nýja ferð
-        /*
+
         Trip trip = new Trip();
-        trip.availableSeats = 50;
+        trip.tripName = "Ferð 4";
+        trip.availableSeats = 100;
         trip.coupleFriendly = true;
         trip.tripDifficulty = 9000;
-        trip.tripDescription = "bless";
-        */
+        trip.tripDescription = "Segway-ferð um Reykjavík";
+
 
         //Bætum henni við gagnagrunninn
-        //addTrip(trip);
+        addTrip(trip);
 
         //Sækjum allar ferðir í gagnagrunni
-        //List<Trip> trips = getAllTrips();
+        List<Trip> trips = getAllTrips();
 
         //Prentum út niðurstöður
-        /*
+
         for ( Trip t : (List<Trip>) trips ) {
             System.out.println(t);
         }
-        */
+
 
         //Eyðum út ferðinni sem við bjuggum til áðan
         //deleteTrip(trip.tripID);
