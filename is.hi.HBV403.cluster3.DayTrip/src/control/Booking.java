@@ -17,6 +17,8 @@ public class Booking {
     public Long bookingNo;
 
 
+
+
     //@OneToMany(mappedBy="booking", cascade = {CascadeType.ALL, CascadeType.MERGE, CascadeType.PERSIST})
     //public Person personalInfo;
 
