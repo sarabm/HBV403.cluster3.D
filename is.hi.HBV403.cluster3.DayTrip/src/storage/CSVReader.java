@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class CSVReader {
 
     public static void main(String[] args) throws IOException {
-      /*  // open file input stream
+       // open file input stream
        // BufferedReader reader = new BufferedReader(new FileReader(
          //       ".persons.csv"));
 
@@ -48,6 +48,6 @@ public class CSVReader {
         reader.close();
 
         System.out.println(pList);
-        */
+
     }
 }
