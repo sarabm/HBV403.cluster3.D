@@ -104,9 +104,19 @@ public class ListController implements Controller, Initializable {
         DayTripUI.changeStage(stage, getClass().getResource("CreateTripController.fxml"),"List.fxml");
     }
 
+    public void updateTrip() throws IOException {
+        Stage stage = (Stage) locationTXT.getScene().getWindow();
+        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"),"List.fxml");
+    }
+
+    public void searchPage() throws IOException{
+        Stage stage = (Stage) locationTXT.getScene().getWindow();
+        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"),"");
+    }
+
+
     @Override
     public void setPrev(String prev) {
-
     }
 
     @Override
