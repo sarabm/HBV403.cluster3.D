@@ -16,7 +16,7 @@ public class Booking {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     public Long bookingNo;
-    public Person personlInfo;
+
     //@OneToMany(mappedBy="booking", cascade = {CascadeType.ALL, CascadeType.MERGE, CascadeType.PERSIST})
     public Person personalInfo;
 
@@ -69,8 +69,10 @@ public class Booking {
                 '}';
     }
 
+    /*
     @Embeddable
     public class Person {
 
     }
+    */
 }

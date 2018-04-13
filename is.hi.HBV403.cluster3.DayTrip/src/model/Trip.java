@@ -54,6 +54,8 @@ public class Trip {
             this.availableSeats = 0;
         }
 
+
+
         @Override
         public String toString() {
             return "" + tripName;
