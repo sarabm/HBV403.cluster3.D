@@ -30,9 +30,8 @@ public class Booking {
 
     public Booking(){}
 
-    public Booking(Person personID, Long tripId, int noGuest) {
+    public Booking(Person personID, int noGuest) {
         this.personalInfo = personID;
-        this.tripID = tripId;
         this.noGuest = noGuest;
         this.isEmpty = false;
     }
