@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
@@ -111,7 +112,8 @@ public class ListController implements Controller, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> obs = FXCollections.observableArrayList("Holland, Amsterdam, Bjórsmökkun", "Holland, Rotterdam, Hestreiðar", "Holland, skotveiðikennsla", "Holland, Vaxsafn");
+        Item <String, Long> p = new Item("foo",1);
+        ObservableList<Item> obs = FXCollections.observableArrayList(p);
         ArrayList<String> data = new ArrayList();
         list.setItems(obs);
         locationTXT.setText(this.location);
@@ -120,5 +122,7 @@ public class ListController implements Controller, Initializable {
         setNumbOfCustomers(numbOfCustomers);
         setDifficulty(difficulty);
         list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
+        System.out.println(list.selectionModelProperty());
     }
+
 }
