@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
@@ -15,6 +16,7 @@ import model.Trip;
 import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -33,9 +35,9 @@ public class ListController implements Controller, Initializable {
     @FXML
     private JFXComboBox minPrice;
     @FXML
-    private JFXComboBox dateFrom;
+    private DatePicker dateFrom;
     @FXML
-    private JFXComboBox dateTo;
+    private DatePicker dateTo;
     @FXML
     private JFXComboBox numbOfCustomers;
     @FXML
@@ -48,6 +50,11 @@ public class ListController implements Controller, Initializable {
     private JFXCheckBox groupTrip;
     @FXML
     private JFXCheckBox wheelChairAccess;
+    private int paramDiff;
+    private Long paramMinPrice;
+    private Long paramMaxPrice;
+
+
 
     public static void setLocation(String loc) {
         location = loc;
@@ -90,15 +97,14 @@ public class ListController implements Controller, Initializable {
 
     private void setDifficulty(JFXComboBox comboBox) {
         ArrayList<String> diffList = new ArrayList();
-        diffList.add("Mjög létt");
-        diffList.add("Létt");
-        diffList.add("Miðlungs");
-        diffList.add("Erfitt");
-        diffList.add("Mjög erfitt");
+        diffList.add("1");
+        diffList.add("2");
+        diffList.add("3");
+        diffList.add("4");
+        diffList.add("5");
         ObservableList<String> obs = FXCollections.observableArrayList(diffList);
         comboBox.setItems(obs);
     }
-
 
     public void bookingService() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
@@ -140,18 +146,21 @@ public class ListController implements Controller, Initializable {
         setNumbOfCustomers(numbOfCustomers);
         setDifficulty(difficulty);
         difficulty.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
-                    System.out.println(newValue);
+            System.out.println(newValue);
+            paramDiff = Integer.parseInt(newValue.toString());
         });
         numbOfCustomers.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
-                    System.out.println(newValue);
+            System.out.println(newValue);
         });
         maxPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
-                    System.out.println(newValue);
+            System.out.println(newValue);
+            paramMaxPrice = Long.parseLong(newValue.toString());
         });
         minPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
-                    System.out.println(newValue);
+            System.out.println(newValue);
+            paramMinPrice = Long.parseLong(newValue.toString());
         });
-        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
+        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this, data));
         System.out.println(list.selectionModelProperty());
     }
 
