@@ -9,12 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import javafx.util.Pair;
+import model.Trip;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import static storage.DBManager.getAllTrips;
 
 public class ListController implements Controller, Initializable {
     private static String location;
@@ -112,15 +115,30 @@ public class ListController implements Controller, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Item <String, Long> p = new Item("foo",1);
-        ObservableList<Item> obs = FXCollections.observableArrayList(p);
-        ArrayList<String> data = new ArrayList();
-        list.setItems(obs);
+        ObservableList<String> data = FXCollections.observableArrayList();
+        List<Trip> trips = getAllTrips();
+        for ( Trip t : trips) {
+            data.add(t.tripName);
+            System.out.println(t.tripID);
+        }
+        list.setItems(data);
         locationTXT.setText(this.location);
         setPriceList(maxPrice);
         setPriceList(minPrice);
         setNumbOfCustomers(numbOfCustomers);
         setDifficulty(difficulty);
+        difficulty.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+                    System.out.println(newValue);
+        });
+        numbOfCustomers.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+                    System.out.println(newValue);
+        });
+        maxPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+                    System.out.println(newValue);
+        });
+        minPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+                    System.out.println(newValue);
+        });
         list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
         System.out.println(list.selectionModelProperty());
     }

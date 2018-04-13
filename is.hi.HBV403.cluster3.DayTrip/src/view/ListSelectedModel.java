@@ -21,6 +21,7 @@ public class ListSelectedModel implements ChangeListener {
         Parent root;
         Stage stage;
         stage = new Stage();
+        System.out.println((observable.getValue().toString()).substring(0,1));
         if(!listController.isViewingTrip()) {
             try {
                 FXMLLoader loader = new FXMLLoader();
