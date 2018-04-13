@@ -8,10 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Trip;
 
+import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -114,15 +116,35 @@ public class ListController implements Controller, Initializable {
         DayTripUI.changeStage(stage, getClass().getResource("CreateTripController.fxml"),"List.fxml");
     }
 
+    public void updateTrip() throws IOException {
+        Stage stage = (Stage) locationTXT.getScene().getWindow();
+        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"),"List.fxml");
+    }
+
+    public void searchPage() throws IOException{
+        Stage stage = (Stage) locationTXT.getScene().getWindow();
+        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"),"");
+    }
+
+
     @Override
     public void setPrev(String prev) {
-
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Trip> data = FXCollections.observableArrayList();
         List<Trip> trips = getAllTrips();
+        for ( Trip t : trips) {
+            data.add(t);
+            System.out.println(t.tripID);
+        }
+        list.setItems(data);
+        locationTXT.setText(this.location);
+        setPriceList(maxPrice);
+        setPriceList(minPrice);
+        setNumbOfCustomers(numbOfCustomers);
+        setDifficulty(difficulty);
         difficulty.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
             System.out.println(newValue);
             paramDiff = Integer.parseInt(newValue.toString());
@@ -138,19 +160,8 @@ public class ListController implements Controller, Initializable {
             System.out.println(newValue);
             paramMinPrice = Long.parseLong(newValue.toString());
         });
-        for ( Trip t : trips) {
-            if (t.tripDifficulty > paramDiff) {
-                data.add(t);
-            }
-        }
-        list.setItems(data);
-        trips = data;
-        locationTXT.setText(this.location);
-        setPriceList(maxPrice);
-        setPriceList(minPrice);
-        setNumbOfCustomers(numbOfCustomers);
-        setDifficulty(difficulty);
-
-        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this, trips));
+        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
+        System.out.println(list.selectionModelProperty());
     }
+
 }

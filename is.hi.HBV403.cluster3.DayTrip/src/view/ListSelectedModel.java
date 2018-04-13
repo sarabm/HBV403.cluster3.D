@@ -2,9 +2,11 @@ package view;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.SelectionModel;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.Trip;
@@ -28,13 +30,8 @@ public class ListSelectedModel implements ChangeListener {
     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
         Parent root;
         Stage stage;
+        System.out.println(oldValue);
         stage = new Stage();
-        for ( Trip t : tripList) {
-            if(newValue.toString().equals(t.tripName)){
-                tripid = t.tripID;
-                trip = t;
-            }
-        }
         if(!listController.isViewingTrip()) {
             try {
                 FXMLLoader loader = new FXMLLoader();
