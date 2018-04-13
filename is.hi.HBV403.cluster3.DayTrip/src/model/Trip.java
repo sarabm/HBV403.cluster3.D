@@ -26,6 +26,13 @@ public class Trip {
         public boolean familyFriendly;
         public boolean coupleFriendly;
         public boolean groupFriendly;
+        @Embedded
+        @AttributeOverrides(value = {
+                @AttributeOverride(name = "firstName", column = @Column(length = 10)),
+                @AttributeOverride(name = "lastName", column = @Column(length = 20)),
+                @AttributeOverride(name = "email", column = @Column(nullable = false))
+        })
+        public Person tripOwner;
 
         //@OneToMany(mappedBy="trip", cascade = {CascadeType.ALL, CascadeType.MERGE, CascadeType.PERSIST})
         public ArrayList<Review> reviews;

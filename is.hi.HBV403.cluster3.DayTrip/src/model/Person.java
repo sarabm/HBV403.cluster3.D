@@ -1,15 +1,14 @@
 package model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Embeddable
 @Table(name = "person")
 public class Person {
 
-    //lykill
-    @Id
     private String emailAddress;
     public String firstName;
     public String lastName;

@@ -11,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBManager {
@@ -20,13 +21,16 @@ public class DBManager {
         //Búum til nýja ferð
 
         Trip trip = new Trip();
-        trip.tripName = "Hestarferd";
-        trip.availableSeats = 100;
-        trip.coupleFriendly = true;
-        trip.tripDifficulty = 9000;
-        trip.tripDescription = "bless";
-        trip.tripDescription = "Segway-ferð um Reykjavík";
-
+        trip.tripName = "Kjólaferð";
+        trip.availableSeats = 3;
+        trip.coupleFriendly = false;
+        trip.tripDifficulty = 4;
+        trip.tripDescription = "Hjólaferð á Akureyri";
+        trip.familyFriendly = false;
+        trip.groupFriendly = true;
+        trip.tripPrice = 88000;
+        trip.tripLocation = "Akureyri";
+        trip.wheelchairAccess = false;
 
         //Bætum henni við gagnagrunninn
         addTrip(trip);

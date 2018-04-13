@@ -113,7 +113,7 @@ public class ListController implements Controller, Initializable {
 
     public void createTrip() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTripController.fxml"),"List.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"List.fxml");
     }
 
     public void updateTrip() throws IOException {
