@@ -31,6 +31,11 @@ public class ListSelectedModel implements ChangeListener {
         Parent root;
         Stage stage;
         System.out.println(oldValue);
+        for(Trip t : tripList) {
+            if (newValue.toString().equals(t.tripName)) {
+                trip = t;
+            }
+        }
         stage = new Stage();
         if(!listController.isViewingTrip()) {
             try {

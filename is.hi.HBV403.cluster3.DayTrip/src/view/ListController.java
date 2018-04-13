@@ -160,7 +160,7 @@ public class ListController implements Controller, Initializable {
             System.out.println(newValue);
             paramMinPrice = Long.parseLong(newValue.toString());
         });
-        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this));
+        list.getSelectionModel().selectedItemProperty().addListener(new ListSelectedModel(this, data));
         System.out.println(list.selectionModelProperty());
     }
 
