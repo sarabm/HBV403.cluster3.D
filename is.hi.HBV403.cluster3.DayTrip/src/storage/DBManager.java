@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBManager {
@@ -18,7 +19,7 @@ public class DBManager {
         //Búum til nýja ferð
 
         Trip trip = new Trip();
-        trip.tripName = "Ferð 4";
+        trip.tripName = "Hestarferd";
         trip.availableSeats = 100;
         trip.coupleFriendly = true;
         trip.tripDifficulty = 9000;
