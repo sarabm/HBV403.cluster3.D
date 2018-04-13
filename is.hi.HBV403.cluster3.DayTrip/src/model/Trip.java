@@ -56,21 +56,7 @@ public class Trip {
 
         @Override
         public String toString() {
-            return "Trip{" +
-                    "tripID=" + tripID +
-                    ", tripStartDate=" + tripStartDate +
-                    ", tripEndDate=" + tripEndDate +
-                    ", tripDescription='" + tripDescription + '\'' +
-                    ", tripPrice=" + tripPrice +
-                    ", tripDifficulty=" + tripDifficulty +
-                    ", wheelchairAccess=" + wheelchairAccess +
-                    ", familyFriendly=" + familyFriendly +
-                    ", coupleFriendly=" + coupleFriendly +
-                    ", goupFriendly=" + groupFriendly +
-                    ", reviews=" + reviews +
-                    ", tripLocation='" + tripLocation + '\'' +
-                    ", availableSeats=" + availableSeats +
-                    '}';
+            return ""+tripName;
         }
 }
 

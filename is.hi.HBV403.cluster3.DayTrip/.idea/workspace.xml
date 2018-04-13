@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="418701f9-3a3a-462a-82e4-2c546e3490b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3cee667-0174-4f69-934e-b6d78f679f9f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3cee667-0174-4f69-934e-b6d78f679f9f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/is.hi.HBV403.cluster3.DayTrip.iml" beforeDir="false" afterPath="$PROJECT_DIR$/is.hi.HBV403.cluster3.DayTrip.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/control/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/control/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Review.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/model/Trip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/storage/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/storage/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/List.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/ListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/ListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/SearchWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/SearchWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/ListSelectedModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/ListSelectedModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/Trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/Trip.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/is.hi.HBV403.cluster3.DayTrip/view/TripController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Trip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storage/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ListSelectedModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ListSelectedModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Trip.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Trip.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TripController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -61,27 +56,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="cluster3_DDB: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cluster3_DDB: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="BOOKING: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cluster3_DDB: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="PERSON: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cluster3_DDB: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="TRIP: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -90,8 +64,8 @@
       <file leaf-file-name="DayTripUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/DayTripUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -99,8 +73,20 @@
       <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/storage/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
+            <state relative-caret-position="282">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListSelectedModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/ListSelectedModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="48" column="91" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,8 +97,8 @@
       <file leaf-file-name="ListController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/ListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="131" column="8" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
+            <state relative-caret-position="306">
+              <caret line="147" column="43" lean-forward="true" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,29 +109,8 @@
       <file leaf-file-name="TripController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/TripController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListSelectedModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/ListSelectedModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trip.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Trip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -164,6 +129,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>group</find>
+      <find>date</find>
+      <find>getall</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,9 +144,10 @@
         <option value="$PROJECT_DIR$/src/model/Review.java" />
         <option value="$PROJECT_DIR$/is.hi.HBV403.cluster3.DayTrip.iml" />
         <option value="$PROJECT_DIR$/src/control/Booking.java" />
-        <option value="$PROJECT_DIR$/src/model/Trip.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/model/Trip.java" />
         <option value="$PROJECT_DIR$/src/view/ListSelectedModel.java" />
+        <option value="$PROJECT_DIR$/src/view/TripController.java" />
         <option value="$PROJECT_DIR$/src/storage/DBManager.java" />
         <option value="$PROJECT_DIR$/src/view/ListController.java" />
       </list>
@@ -191,9 +159,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="718" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1914" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -201,6 +169,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,38 +181,13 @@
             <path>
               <item name="is.hi.HBV403.cluster3.DayTrip" type="b2602c69:ProjectViewProjectNode" />
               <item name="is.hi.HBV403.cluster3.DayTrip" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="is.hi.HBV403.cluster3.DayTrip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,15 +301,15 @@
       <workItem from="1523541340024" duration="1068000" />
       <workItem from="1523542605836" duration="1781000" />
       <workItem from="1523561137103" duration="663000" />
+      <workItem from="1523620533402" duration="8538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7798000" />
+    <option name="totallyTimeSpent" value="17755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -372,11 +317,11 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.31309438" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20629115" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39974126" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32858992" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -384,42 +329,19 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23285899" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32858992" />
-      <window_info id="Persistence" order="2" sideWeight="0.20573355" side_tool="true" visible="true" weight="0.20190197" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79426646" visible="true" weight="0.20190197" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972875" weight="0.25679544" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3751617" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32969698" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
+      <window_info id="Persistence" order="2" sideWeight="0.32919255" side_tool="true" visible="true" weight="0.19312362" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6708075" visible="true" weight="0.19312362" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Persistence" order="2" sideWeight="0.5027125" side_tool="true" visible="true" weight="0.2532189" />
-      <window_info anchor="right" id="Database" order="3" weight="0.28254437" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.32858992" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37571427" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
     </layout>
     <layout-to-restore>
       <window_info id="Persistence" order="2" sideWeight="0.5027125" side_tool="true" visible="true" weight="0.2532189" />
@@ -492,20 +414,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/sarabm/HBV403.cluster3.D&#10;&#10;# Conflicts:&#10;#&#9;is.hi.HBV403.cluster3.DayTrip/.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/control/TripRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -533,6 +441,8 @@
           <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1979#1980#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,6 +505,8 @@
           <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1979#1980#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -692,6 +604,8 @@
           <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1979#1980#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,12 +718,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/beans/value/ChangeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="432">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/List.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="54" column="92" selection-start-line="54" selection-start-column="88" selection-end-line="54" selection-end-column="92" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://63a7f570-1aec-4e2e-a976-b5ff03ff04ca/schema/cluster3_ddb/table/trip">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -818,10 +747,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/Trip.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Trip.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+        <state relative-caret-position="251">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1979#1980#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/TripController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/ListSelectedModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="48" column="91" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/storage/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -830,46 +796,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/DayTripUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ListSelectedModel.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/storage/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TripController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/beans/value/ChangeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/ListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="131" column="8" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
+        <state relative-caret-position="306">
+          <caret line="147" column="43" lean-forward="true" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

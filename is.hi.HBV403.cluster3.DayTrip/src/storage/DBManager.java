@@ -18,11 +18,13 @@ public class DBManager {
         //Búum til nýja ferð
 
         Trip trip = new Trip();
-        trip.tripName = "Ferð 4";
+        trip.tripName = "Ferð 6";
         trip.availableSeats = 100;
         trip.coupleFriendly = true;
-        trip.tripDifficulty = 9000;
-        trip.tripDescription = "Segway-ferð um Reykjavík";
+        trip.tripDifficulty = 2;
+        trip.tripLocation = "Hafnarfjörður";
+        trip.tripPrice = 10000;
+        trip.tripDescription = "Segway-ferð um Hfj";
 
 
         //Bætum henni við gagnagrunninn
