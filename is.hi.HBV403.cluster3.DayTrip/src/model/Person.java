@@ -1,66 +1,42 @@
 package model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PERSON")
+@Table(name = "person")
 public class Person {
 
+    //lykill
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    private Long id;
-
+    private String emailAddress;
     public String firstName;
     public String lastName;
 
-    //gera foreign key
-    private String email;
-
-    public Long getId() {
-        return id;
+    public Person() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    public Person(String emailAddress, String firstName, String lastName) {
+        this.emailAddress = emailAddress;
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
+                "emailAddress='" + emailAddress + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
                 '}';
     }
 }
