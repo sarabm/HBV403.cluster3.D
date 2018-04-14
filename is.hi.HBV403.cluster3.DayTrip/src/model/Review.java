@@ -3,9 +3,10 @@ package model;
 import javax.persistence.Embeddable;
 import java.util.Date;
 
+
+// Allt þetta cool stuff er til þess að tengjast eða búa til töfluna Review í hibernate
 @Embeddable
 public class Review {
-
 
     public Long reviewID;
 

@@ -13,9 +13,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0"
             xmlns="http://javafx.com/javafx/8.0.141" fx:controller="view.SearchWindowController">
+=======
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchWindowController">
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
     <center>
         <BorderPane prefHeight="503.0" prefWidth="471.0" BorderPane.alignment="CENTER">
             <top>
@@ -60,16 +64,31 @@
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="Options">
+                <Menu mnemonicParsing="false" text="Booking">
                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Trip Manager">
+                    <items>
+<<<<<<< HEAD
                         <MenuItem mnemonicParsing="false" onAction="#bookingService" text="Booking Service"/>
                         <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip"/>
+=======
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
+<<<<<<< HEAD
                         <MenuItem mnemonicParsing="false" text="About booking"/>
                         <MenuItem mnemonicParsing="false" text="About tripcreation"/>
+=======
+                        <MenuItem mnemonicParsing="false" text="About Booking" />
+                        <MenuItem mnemonicParsing="false" text="About Trip Creation" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </items>
                 </Menu>
             </menus>

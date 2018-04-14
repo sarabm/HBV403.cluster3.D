@@ -8,7 +8,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Aðferðir eru statískar!
+ * aðalaðferðin er searchTrips, búa þarf til tilvik af Filter og setja það
+ * sem viðfang, ef tilviksbreyta í Filterer null þá er ekki tekið mark á 
+ * þeirri síun sem sú breyta á að gera
+ */
 public class TripController {
     public TripController() {
     }
@@ -31,9 +36,10 @@ public class TripController {
         }
         return trips;
     }
+
     /*
+     // Prófa TripController
     public static void main(String[] args) throws ParseException {
-        // Prófa TripController
 
         Filter f = new Filter();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -42,7 +48,8 @@ public class TripController {
         System.out.println(searchTrips(f));
 
 
-    }*/
+    }
+    */
 
     public Trip getTrip(Long tripID) {
         return DBManager.getTrip(tripID);
@@ -53,3 +60,4 @@ public class TripController {
     }
 
 }
+ 

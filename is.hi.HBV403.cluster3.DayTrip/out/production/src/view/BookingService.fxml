@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.geometry.Insets?>
 <?import com.jfoenix.controls.JFXButton?>
+<<<<<<< HEAD
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.141"
             fx:controller="view.BookingServiceController">
+=======
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingServiceController">
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="Options">
+                <Menu mnemonicParsing="false" text="Trip Manager">
                     <items>
+<<<<<<< HEAD
                         <MenuItem mnemonicParsing="false" onAction="#back" text="Back"/>
                         <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create trip"/>
                         <MenuItem fx:id="searchPage" mnemonicParsing="false" onAction="#searchPage" text="Search"/>
+=======
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete"/>
                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Back">
+                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
+                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
                 </Menu>
             </menus>
         </MenuBar>
@@ -36,7 +51,7 @@
                     <children>
                         <FlowPane alignment="BOTTOM_CENTER" prefHeight="78.0" prefWidth="352.0">
                             <children>
-                                <Label text="Username">
+                                <Label text="Booking number">
                                     <FlowPane.margin>
                                         <Insets/>
                                     </FlowPane.margin>
@@ -52,7 +67,7 @@
                         </FlowPane>
                         <FlowPane alignment="TOP_CENTER" prefHeight="47.0" prefWidth="354.0">
                             <children>
-                                <Label text="Password">
+                                <Label text="Email address  ">
                                     <FlowPane.margin>
                                         <Insets/>
                                     </FlowPane.margin>
@@ -67,11 +82,14 @@
                                 </TextField>
                             </children>
                         </FlowPane>
+<<<<<<< HEAD
                         <JFXButton fx:id="logIn" prefHeight="31.0" prefWidth="124.0" text="Log In"/>
+=======
+                        <JFXButton fx:id="logIn" prefHeight="31.0" prefWidth="124.0" text="Get booking" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </children>
                 </FlowPane>
             </children>
         </FlowPane>
     </center>
 </BorderPane>
-

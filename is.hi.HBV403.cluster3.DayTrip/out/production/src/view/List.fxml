@@ -18,17 +18,35 @@
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="Options">
+                <Menu mnemonicParsing="false" text="Booking">
                     <items>
+<<<<<<< HEAD
                         <MenuItem mnemonicParsing="false" onAction="#bookingService" text="Booking service"/>
                         <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create trip"/>
+=======
+                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Trip Manager">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
+<<<<<<< HEAD
                         <MenuItem mnemonicParsing="false" text="About booking"/>
                         <MenuItem mnemonicParsing="false" text="About tripcreation"/>
+=======
+                        <MenuItem mnemonicParsing="false" text="About Booking" />
+                        <MenuItem mnemonicParsing="false" text="About Trip Creation" />
+>>>>>>> dd400a0df0dd5ff2afb28e8e4c96893064e0ea3b
                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Back">
+                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
                 </Menu>
             </menus>
         </MenuBar>

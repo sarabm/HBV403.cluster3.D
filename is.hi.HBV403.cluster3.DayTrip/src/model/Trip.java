@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+// Allt þetta cool stuff er til þess að tengjast eða búa til töfluna trip í hibernate
 @Entity
 @Table(name = "trip")
 public class Trip {
