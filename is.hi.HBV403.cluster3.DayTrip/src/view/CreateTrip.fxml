@@ -79,7 +79,7 @@
                                 </TextField>
                             </children>
                         </FlowPane>
-                        <JFXButton fx:id="confirmSignUp" prefHeight="31.0" prefWidth="124.0" text="Sign Up" />
+                        <JFXButton fx:id="confirmSignUp" prefHeight="31.0" prefWidth="124.0" text="Create Trip" />
                     </children>
                 </FlowPane>
             </children>
