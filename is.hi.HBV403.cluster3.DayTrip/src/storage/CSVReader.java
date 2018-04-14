@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class CSVReader {
 
     public static void main(String[] args) throws IOException {
-       // open file input stream
-       // BufferedReader reader = new BufferedReader(new FileReader(
-         //       ".persons.csv"));
+        // open file input stream
+        // BufferedReader reader = new BufferedReader(new FileReader(
+        //       ".persons.csv"));
 
         File inputF = new File("persons.csv");
         InputStream inputFS = new FileInputStream(inputF);
@@ -33,9 +33,9 @@ public class CSVReader {
                 if (index == 0)
                     p.setEmailAddress(data);
                 else if (index == 1)
-                    p.firstName=data;
+                    p.firstName = data;
                 else if (index == 2)
-                    p.lastName=data;
+                    p.lastName = data;
                 else
                     System.out.println("invalid data::" + data);
                 index++;

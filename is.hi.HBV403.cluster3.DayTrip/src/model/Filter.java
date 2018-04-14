@@ -14,7 +14,7 @@ public class Filter {
     public Boolean groupFriendly;
     public String location;
 
-    public Filter(){
+    public Filter() {
     }
 
 }

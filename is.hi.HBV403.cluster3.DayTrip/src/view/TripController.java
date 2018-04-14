@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 public class TripController implements Initializable {
     @FXML
     private JFXTabPane tabs;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
@@ -31,15 +32,15 @@ public class TripController implements Initializable {
         Text text = new Text();
         button.setText("Book");
 
-        text.setText("Lýsing: \n"+trip.tripDescription+"\n\n");
-        if(trip.tripPrice > 0) {
-            text.setText(text.getText()+"Verð: \n"+trip.tripPrice+"\n\n");
+        text.setText("Lýsing: \n" + trip.tripDescription + "\n\n");
+        if (trip.tripPrice > 0) {
+            text.setText(text.getText() + "Verð: \n" + trip.tripPrice + "\n\n");
         }
-        if(trip.tripLocation != null) {
-            text.setText(text.getText() + "Staðsetning: \n" +trip.tripLocation+"\n\n");
+        if (trip.tripLocation != null) {
+            text.setText(text.getText() + "Staðsetning: \n" + trip.tripLocation + "\n\n");
         }
-        if(trip.tripDifficulty > 0) {
-            text.setText(text.getText() + "Erfiðleiki: \n" + trip.tripDifficulty+"\n\n");
+        if (trip.tripDifficulty > 0) {
+            text.setText(text.getText() + "Erfiðleiki: \n" + trip.tripDifficulty + "\n\n");
         }
         heading.setFont(new Font("System", 32));
         heading.setStyle("-fx-font-weight: bold");

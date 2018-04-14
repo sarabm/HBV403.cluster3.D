@@ -13,20 +13,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchWindowController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0"
+            xmlns="http://javafx.com/javafx/8.0.141" fx:controller="view.SearchWindowController">
     <center>
         <BorderPane prefHeight="503.0" prefWidth="471.0" BorderPane.alignment="CENTER">
             <top>
-                <Label alignment="BOTTOM_CENTER" prefHeight="69.0" prefWidth="293.0" text="Look for daytrips!" BorderPane.alignment="BOTTOM_CENTER">
+                <Label alignment="BOTTOM_CENTER" prefHeight="69.0" prefWidth="293.0" text="Look for daytrips!"
+                       BorderPane.alignment="BOTTOM_CENTER">
                     <font>
-                        <Font name="System Bold" size="29.0" />
+                        <Font name="System Bold" size="29.0"/>
                     </font>
                 </Label>
             </top>
             <bottom>
                 <FlowPane alignment="TOP_CENTER" prefHeight="163.0" prefWidth="443.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="forwardbutton" mnemonicParsing="false" onAction="#forwardButton" prefHeight="31.0" prefWidth="124.0" text="Next" />
+                        <Button fx:id="forwardbutton" mnemonicParsing="false" onAction="#forwardButton"
+                                prefHeight="31.0" prefWidth="124.0" text="Next"/>
                     </children>
                 </FlowPane>
             </bottom>
@@ -37,12 +41,13 @@
                             <children>
                                 <FlowPane alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="280.0">
                                     <children>
-                                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="157.0" text="Location">
+                                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0"
+                                               prefWidth="157.0" text="Location">
                                             <padding>
-                                                <Insets bottom="10.0" />
+                                                <Insets bottom="10.0"/>
                                             </padding>
                                         </Label>
-                                        <JFXTextField fx:id="locationTXT" prefHeight="31.0" prefWidth="231.0" />
+                                        <JFXTextField fx:id="locationTXT" prefHeight="31.0" prefWidth="231.0"/>
                                     </children>
                                 </FlowPane>
                             </children>
@@ -57,13 +62,14 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Options">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="Booking Service" />
-                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
-                    </items></Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="Booking Service"/>
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip"/>
+                    </items>
+                </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About booking" />
-                        <MenuItem mnemonicParsing="false" text="About tripcreation" />
+                        <MenuItem mnemonicParsing="false" text="About booking"/>
+                        <MenuItem mnemonicParsing="false" text="About tripcreation"/>
                     </items>
                 </Menu>
             </menus>
@@ -74,7 +80,8 @@
             <children>
                 <AnchorPane prefHeight="503.0" prefWidth="373.0">
                     <children>
-                        <Label id="img" alignment="CENTER" contentDisplay="CENTER" layoutY="36.0" prefHeight="432.0" prefWidth="373.0" stylesheets="@resources/mycss.css" />
+                        <Label id="img" alignment="CENTER" contentDisplay="CENTER" layoutY="36.0" prefHeight="432.0"
+                               prefWidth="373.0" stylesheets="@resources/mycss.css"/>
                     </children>
                 </AnchorPane>
             </children>

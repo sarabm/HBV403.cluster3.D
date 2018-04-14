@@ -8,15 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Trip;
 
-import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -55,7 +52,6 @@ public class ListController implements Controller, Initializable {
     private Long paramMaxPrice;
 
 
-
     public static void setLocation(String loc) {
         location = loc;
     }
@@ -72,11 +68,11 @@ public class ListController implements Controller, Initializable {
     private void setPriceList(JFXComboBox comboBox) {
         int price = 0;
         ArrayList<String> priceList = new ArrayList();
-        for(int i = 0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             priceList.add("" + price);
             price += 10000;
         }
-        for(int i = 0; i<9; i++) {
+        for (int i = 0; i < 9; i++) {
             priceList.add("" + price);
             price += 50000;
         }
@@ -87,7 +83,7 @@ public class ListController implements Controller, Initializable {
     private void setNumbOfCustomers(JFXComboBox comboBox) {
         int count = 0;
         ArrayList<String> custList = new ArrayList();
-        for(int i = 0; i<50; i++) {
+        for (int i = 0; i < 50; i++) {
             custList.add("" + count);
             count += 1;
         }
@@ -108,22 +104,22 @@ public class ListController implements Controller, Initializable {
 
     public void bookingService() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"),"List.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"), "List.fxml");
     }
 
     public void createTrip() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"List.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"), "List.fxml");
     }
 
     public void updateTrip() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"),"List.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"), "List.fxml");
     }
 
-    public void searchPage() throws IOException{
+    public void searchPage() throws IOException {
         Stage stage = (Stage) locationTXT.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"),"");
+        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"), "");
     }
 
 
@@ -135,7 +131,7 @@ public class ListController implements Controller, Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Trip> data = FXCollections.observableArrayList();
         List<Trip> trips = getAllTrips();
-        for ( Trip t : trips) {
+        for (Trip t : trips) {
             data.add(t);
             System.out.println(t.tripID);
         }
@@ -145,18 +141,18 @@ public class ListController implements Controller, Initializable {
         setPriceList(minPrice);
         setNumbOfCustomers(numbOfCustomers);
         setDifficulty(difficulty);
-        difficulty.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+        difficulty.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
             System.out.println(newValue);
             paramDiff = Integer.parseInt(newValue.toString());
         });
-        numbOfCustomers.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+        numbOfCustomers.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
             System.out.println(newValue);
         });
-        maxPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+        maxPrice.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
             System.out.println(newValue);
             paramMaxPrice = Long.parseLong(newValue.toString());
         });
-        minPrice.getSelectionModel().selectedItemProperty().addListener( (options, oldValue, newValue) -> {
+        minPrice.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
             System.out.println(newValue);
             paramMinPrice = Long.parseLong(newValue.toString());
         });

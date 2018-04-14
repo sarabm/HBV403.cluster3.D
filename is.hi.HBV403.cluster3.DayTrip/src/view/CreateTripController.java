@@ -6,27 +6,31 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CreateTripController implements Controller{
+public class CreateTripController implements Controller {
     private String fxmlPrev;
     @FXML
     private JFXButton confirmSignUp;
 
-    public void bookingService() throws IOException{
+    public void bookingService() throws IOException {
         Stage stage = (Stage) confirmSignUp.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"),"CreateTrip.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"), "CreateTrip.fxml");
     }
+
     public void updateTrip() throws IOException {
         Stage stage = (Stage) confirmSignUp.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"),"CreateTrip.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"), "CreateTrip.fxml");
     }
-    public void searchPage() throws IOException{
+
+    public void searchPage() throws IOException {
         Stage stage = (Stage) confirmSignUp.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"),"");
+        DayTripUI.changeStage(stage, getClass().getResource("SearchWindow.fxml"), "");
     }
+
     public void back() throws IOException {
         Stage stage = (Stage) confirmSignUp.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource(fxmlPrev),"CreateTrip.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource(fxmlPrev), "CreateTrip.fxml");
     }
+
     @Override
     public void setPrev(String prev) {
         this.fxmlPrev = prev;

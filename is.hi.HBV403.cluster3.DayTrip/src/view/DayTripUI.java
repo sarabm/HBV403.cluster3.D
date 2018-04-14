@@ -11,14 +11,6 @@ import java.net.URL;
 
 public class DayTripUI extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SearchWindow.fxml"));
-        primaryStage.setTitle("daytrip.exe");
-        primaryStage.setScene(new Scene(root, 820, 535));
-        primaryStage.show();
-    }
-
     public static void changeStage(Stage stage, URL url, String prev) throws IOException {
         Parent root;
         FXMLLoader loader = new FXMLLoader(url);
@@ -30,9 +22,16 @@ public class DayTripUI extends Application {
         stage.show();
     }
 
-
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("SearchWindow.fxml"));
+        primaryStage.setTitle("daytrip.exe");
+        primaryStage.setScene(new Scene(root, 820, 535));
+        primaryStage.show();
     }
 
 }

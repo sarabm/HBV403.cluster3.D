@@ -10,28 +10,30 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UpdateTripController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="view.UpdateTripController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="Booking">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking" />
+                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Trip Manager">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete/Update Trip" />
+                        <MenuItem mnemonicParsing="false" text="Delete/Update Trip"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Back">
-                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
-                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
+                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search"/>
+                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page"/>
                 </Menu>
             </menus>
         </MenuBar>
@@ -43,29 +45,31 @@
                     <children>
                         <FlowPane alignment="BOTTOM_CENTER" prefHeight="78.0" prefWidth="352.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="122.0" text="Trip Number" textAlignment="RIGHT">
+                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="122.0" text="Trip Number"
+                                       textAlignment="RIGHT">
                                     <FlowPane.margin>
-                                        <Insets right="10.0" />
+                                        <Insets right="10.0"/>
                                     </FlowPane.margin>
                                 </Label>
-                                <TextField prefHeight="31.0" prefWidth="192.0" />
+                                <TextField prefHeight="31.0" prefWidth="192.0"/>
                             </children>
                         </FlowPane>
                         <FlowPane alignment="CENTER" prefHeight="78.0" prefWidth="354.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="118.0" text="Email Address">
+                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="118.0"
+                                       text="Email Address">
                                     <FlowPane.margin>
-                                        <Insets right="15.0" />
+                                        <Insets right="15.0"/>
                                     </FlowPane.margin>
                                 </Label>
                                 <TextField prefHeight="31.0" prefWidth="192.0">
                                     <FlowPane.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </FlowPane.margin>
                                 </TextField>
                             </children>
                         </FlowPane>
-                        <JFXButton fx:id="confirmSignUp" prefHeight="31.0" prefWidth="124.0" text="View Trip" />
+                        <JFXButton fx:id="confirmSignUp" prefHeight="31.0" prefWidth="124.0" text="View Trip"/>
                     </children>
                 </FlowPane>
             </children>

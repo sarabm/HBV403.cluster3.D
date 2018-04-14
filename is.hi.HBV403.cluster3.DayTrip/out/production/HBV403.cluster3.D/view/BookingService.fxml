@@ -10,24 +10,26 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingServiceController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="view.BookingServiceController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="Trip Manager">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
-                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip"/>
+                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Back">
-                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
-                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
+                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search"/>
+                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page"/>
                 </Menu>
             </menus>
         </MenuBar>
@@ -41,36 +43,36 @@
                             <children>
                                 <Label text="Booking number">
                                     <FlowPane.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </FlowPane.margin>
                                     <padding>
-                                        <Insets right="20.0" />
+                                        <Insets right="20.0"/>
                                     </padding>
                                 </Label>
-                                <TextField prefHeight="31.0" prefWidth="192.0" />
+                                <TextField prefHeight="31.0" prefWidth="192.0"/>
                             </children>
                             <FlowPane.margin>
-                                <Insets bottom="20.0" />
+                                <Insets bottom="20.0"/>
                             </FlowPane.margin>
                         </FlowPane>
                         <FlowPane alignment="TOP_CENTER" prefHeight="47.0" prefWidth="354.0">
                             <children>
                                 <Label text="Email address  ">
                                     <FlowPane.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </FlowPane.margin>
                                     <padding>
-                                        <Insets right="25.0" />
+                                        <Insets right="25.0"/>
                                     </padding>
                                 </Label>
                                 <TextField prefHeight="31.0" prefWidth="191.0">
                                     <FlowPane.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </FlowPane.margin>
                                 </TextField>
                             </children>
                         </FlowPane>
-                        <JFXButton fx:id="logIn" prefHeight="31.0" prefWidth="124.0" text="Get booking" />
+                        <JFXButton fx:id="logIn" prefHeight="31.0" prefWidth="124.0" text="Get booking"/>
                     </children>
                 </FlowPane>
             </children>

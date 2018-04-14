@@ -1,8 +1,9 @@
 package storage;
 
-import model.*;
-import control.*;
-
+import control.Booking;
+import model.Person;
+import model.Review;
+import model.Trip;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,79 +11,36 @@ import org.hibernate.cfg.Configuration;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+
+/**
+ * Sér um að setja, sækja og eyða gögnum í gagnagrunn.
+ */
 public class DBManager {
 
+
+    /**
+     * Keyra í til þess að búa til töflur í gagnagrunni
+     * @param args
+     */
     public static void main(String[] args) {
 
-        //Búum til nýja ferð
+       Trip trip = new Trip();
 
-        Trip trip = new Trip();
-        trip.tripName = "Kjólaferð";
-        trip.availableSeats = 3;
-        trip.coupleFriendly = false;
-        trip.tripDifficulty = 4;
-        trip.tripDescription = "Hjólaferð á Akureyri";
-        trip.familyFriendly = false;
-        trip.groupFriendly = true;
-        trip.tripPrice = 88000;
-        trip.tripLocation = "Akureyri";
-        trip.wheelchairAccess = false;
+       Booking booking = new Booking();
 
-        //Bætum henni við gagnagrunninn
-        addTrip(trip);
-
-        //Sækjum allar ferðir í gagnagrunni
-        List<Trip> trips = getAllTrips();
-
-
-        //Prentum út niðurstöður
-
-        for ( Trip t : (List<Trip>) trips ) {
-            System.out.println(t);
-        }
-
-
-        //Eyðum út ferðinni sem við bjuggum til áðan
-        //deleteTrip(trip.tripID);
+       addTrip(trip);
+       addBooking(booking);
     }
 
 
-    public static boolean addPerson(Person person) {
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Person.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
-
-        try{
-
-            session.beginTransaction();
-
-            session.save(person);
-
-            session.getTransaction().commit();
-
-        } catch (HibernateException hibernateEx) {
-            try {
-                session.getTransaction().rollback();
-            } catch (RuntimeException runtimeEx) {
-                System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
-            }
-            hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            return true;
-        }
-    }
-
-
+    /**
+     * Bætir við bókun í gagnagrunn
+     * Skilar Long gildi með bókunarnúmeri
+     * @param booking
+     * @return
+     */
     public static Long addBooking(Booking booking) {
 
         SessionFactory factory = new Configuration()
@@ -115,16 +73,22 @@ public class DBManager {
         }
     }
 
+    /**
+     * Bætir við ferð í gagnagrunninn
+     * Skilar true/false ef gekk/gekk ekki
+     * @param trip
+     * @return
+     */
     public static boolean addTrip(Trip trip) {
 
         SessionFactory factory = new Configuration()
-                                 .configure()
-                                 .addAnnotatedClass(Trip.class)
-                                 .buildSessionFactory();
+                .configure()
+                .addAnnotatedClass(Trip.class)
+                .buildSessionFactory();
 
         Session session = factory.openSession();
 
-        try{
+        try {
             session.beginTransaction();
 
             session.save(trip);
@@ -146,16 +110,22 @@ public class DBManager {
         }
     }
 
+    /**
+     * Bætir við Review í gagnagrunninn
+     * Skilar true/false ef gekk/gekk ekki
+     * @param review
+     * @return
+     */
     public static boolean addReview(Review review) {
 
         SessionFactory factory = new Configuration()
-                                 .configure()
-                                 .addAnnotatedClass(Review.class)
-                                 .buildSessionFactory();
+                .configure()
+                .addAnnotatedClass(Review.class)
+                .buildSessionFactory();
 
         Session session = factory.openSession();
 
-        try{
+        try {
             session.beginTransaction();
 
             session.save(review);
@@ -177,6 +147,12 @@ public class DBManager {
         }
     }
 
+    /**
+     * Eyðir ferð úr gagnagrunni
+     * Skilar true/false ef gekk/gekk ekki
+     * @param tripId
+     * @return
+     */
     public static boolean deleteTrip(Long tripId) {
 
         SessionFactory factory = new Configuration()
@@ -208,6 +184,12 @@ public class DBManager {
         }
     }
 
+    /**
+     * Eyðir ferð úr gagnagrunni
+     * Skilar true/false ef gekk/gekk ekki
+     * @param bookingNo
+     * @return
+     */
     public static boolean deleteBooking(Long bookingNo) {
 
         SessionFactory factory = new Configuration()
@@ -238,6 +220,12 @@ public class DBManager {
             return true;
         }
     }
+
+    /**
+     * Sækir bókun í gagnagrunninn út frá bókunarnúmeri
+     * @param bookingNo
+     * @return Skilar hluti af taginu Booking
+     */
 
     public static Booking getBooking(Long bookingNo) {
 
@@ -271,38 +259,12 @@ public class DBManager {
             return booking;
         }
     }
-    public static Person getPerson(String emailAddress){
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Person.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
-
-        session.beginTransaction();
-
-        Person person = new Person();
-
-        try {
-            person = session.get(Person.class, emailAddress);
-
-            session.getTransaction().commit();
-        } catch (HibernateException hibernateEx) {
-        try {
-            session.getTransaction().rollback();
-        } catch (RuntimeException runtimeEx) {
-            System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
-        }
-        hibernateEx.printStackTrace();
-    } finally {
-        if (session != null) {
-            session.close();
-        }
-        return person;
-        }
-    }
-
+    /**
+     * Sækir ferð í gagnagrunn út frá tripId
+     * @param tripId
+     * @return Skilar hlut af taginu Trip
+     */
     public static Trip getTrip(Long tripId) {
 
         SessionFactory factory = new Configuration()
@@ -334,6 +296,11 @@ public class DBManager {
         }
     }
 
+    /**
+     *
+     * @param reviewId
+     * @return
+     */
 
     public static Review getReview(Long reviewId) {
 
@@ -366,8 +333,11 @@ public class DBManager {
         }
     }
 
-
-    public static List<Trip> getAllTrips(){
+    /**
+     * Sækir allar ferðir í gagnagrunn
+     * @return lista með Trip hlutum
+     */
+    public static List<Trip> getAllTrips() {
 
         SessionFactory factory = new Configuration()
                 .configure()
@@ -395,7 +365,6 @@ public class DBManager {
         session.close();
         return result;
     }
-
 
 
 }

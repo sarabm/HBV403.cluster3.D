@@ -1,29 +1,26 @@
 package model;
 
-import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 import java.util.Date;
 
-@Entity
-@Table(name = "REVIEW")
+@Embeddable
 public class Review {
 
-        @Id
-        @GeneratedValue(generator = "increment")
-        @GenericGenerator(name = "increment", strategy = "increment")
-        public Long reviewID;
 
-        /*
-        @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn
-        */
-        public Long tripID;
+    public Long reviewID;
 
-        public Date date;
-        public String reviewText;
+    /*
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    */
+    public Long tripID;
+
+    public Date date;
+    public String reviewText;
 
 
-    public Review(){}
+    public Review() {
+    }
 
     public Review(Long tripID, Date date, String reviewText) {
         this.tripID = tripID;
