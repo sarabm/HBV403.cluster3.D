@@ -9,7 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * Aðferðir eru statískar!
+ * aðalaðferðin er searchTrips, búa þarf til tilvik af Filter og setja það
+ * sem viðfang, ef tilviksbreyta í Filterer null þá er ekki tekið mark á 
+ * þeirri síun sem sú breyta á að gera
+ */
 public class TripController {
     public TripController() {
     }
@@ -33,10 +38,10 @@ public class TripController {
         }
         return trips;
     }
-    public Trip getTrip(Long tripID) {
+    public static Trip getTrip(Long tripID) {
         return DBManager.getTrip(tripID);
     }
-    public List<Trip> getAllTrips(){
+    public static List<Trip> getAllTrips(){
         return DBManager.getAllTrips();
     }
 
@@ -51,3 +56,4 @@ public class TripController {
     }
 
 }
+ 

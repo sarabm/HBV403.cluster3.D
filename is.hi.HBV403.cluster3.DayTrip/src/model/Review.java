@@ -4,6 +4,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
+
+// Allt þetta cool stuff er til þess að tengjast eða búa til töfluna Review í hibernate
 @Entity
 @Table(name = "REVIEW")
 public class Review {

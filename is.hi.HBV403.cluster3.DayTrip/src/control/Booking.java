@@ -8,6 +8,9 @@ import storage.DBManager;
 import javax.persistence.*;
 import java.awt.print.Book;
 
+
+// Allt þetta cool stuff er til þess að tengjast eða búa til töfluna booking í hibernate
+
 @Entity
 @Table(name ="booking")
 public class Booking {
@@ -33,7 +36,15 @@ public class Booking {
     public boolean isEmpty = true;
     public int noGuest;
 
+    /**
+     * Þegar búið er til bókun þarf að búa til tilvik af bókun
+     * Síðan þarf að staðfersta hana með submitBooking aðferðinni
+     * t.d
+     *      Booking b = new Booking(...)
+     *      b.submitBooking();
+     */
 
+    // tóm bókun, notað ef gagnagrunnur kastar exception, þá er isEmpty = true
     public Booking(){}
 
     public Booking(Person personID, int noGuest) {
@@ -45,6 +56,9 @@ public class Booking {
     public boolean cancelBooking() {
         return DBManager.deleteBooking(this.bookingNo);
     }
+
+    // skilar "tómri bókun" ef gagnagrunnur kastar exception (t.d gagnagrunnur niðri) eða ef
+    // enginn færsla í töflu hefur viðeigandi bookingNo
 
     public static Booking getBooking(long bookingNo) {
         Booking b;
