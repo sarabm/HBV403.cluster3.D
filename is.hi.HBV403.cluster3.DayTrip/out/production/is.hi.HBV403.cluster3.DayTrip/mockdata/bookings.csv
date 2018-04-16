@@ -2,6 +2,3 @@ bookingNo,isEmpty,noGuest,emailAddress,firstName,lastName,tripID
 1,0,10,mthurn@live.com,Mary,Thurn,3
 2,0,1,andrewj@outlook.com,Andrew,Jones,1
 3,0,2,sbaker@hotmail.com,"Sarah ",Baker,4
-NULL,NULL,NULL,NULL,NULL,NULL,
-NULL,NULL,NULL,NULL,NULL,NULL,
-NULL,NULL,NULL,NULL,NULL,NULL,

@@ -40,27 +40,24 @@ public class Trip {
     public Trip() {
     }
 
-    ;
-
-    public Trip(Long tripID, String tripName, Date tripStartDate, Date tripEndDate, String tripDescription, double tripPrice,
-                int tripDifficulty, boolean wheelchairAccess, boolean familyFriendly, boolean coupleFriendly,
-                boolean goupFriendly, String tripLocation, int availableSeats) {
-        this.tripID = null;
+    public Trip(String tripName, Date tripStartDate, Date tripEndDate, String tripDescription,
+                double tripPrice, int tripDifficulty, boolean wheelchairAccess, boolean familyFriendly,
+                boolean coupleFriendly, boolean groupFriendly, Person tripOwner, String tripLocation,
+                int availableSeats) {
         this.tripName = tripName;
-        this.tripStartDate = null;
-        this.tripEndDate = null;
+        this.tripStartDate = tripStartDate;
+        this.tripEndDate = tripEndDate;
         this.tripDescription = tripDescription;
-        this.tripPrice = 0;
-        this.tripDifficulty = 0;
+        this.tripPrice = tripPrice;
+        this.tripDifficulty = tripDifficulty;
         this.wheelchairAccess = wheelchairAccess;
         this.familyFriendly = familyFriendly;
         this.coupleFriendly = coupleFriendly;
-        this.groupFriendly = goupFriendly;
-        //this.reviews = reviews;
+        this.groupFriendly = groupFriendly;
+        this.tripOwner = tripOwner;
         this.tripLocation = tripLocation;
-        this.availableSeats = 0;
+        this.availableSeats = availableSeats;
     }
-
 
     @Override
     public String toString() {

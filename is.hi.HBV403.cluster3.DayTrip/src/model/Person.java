@@ -4,7 +4,6 @@ import javax.persistence.Embeddable;
 import javax.persistence.Table;
 
 
-// Gert þannig hægt er að setja hlut af tagi Person í töfluna booking, review og trip
 @Embeddable
 @Table(name = "person")
 public class Person {

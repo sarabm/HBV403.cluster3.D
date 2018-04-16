@@ -21,6 +21,7 @@ public class Booking {
 
     @Embedded
     public Person personalInfo;
+
     public Long tripID;
     public boolean isEmpty = true;
     public int noGuest;

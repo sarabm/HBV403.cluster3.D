@@ -1,14 +1,12 @@
 package storage;
 
 import control.Booking;
-import model.Person;
 import model.Review;
 import model.Trip;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
@@ -21,19 +19,40 @@ public class DBManager {
 
 
     /**
+     * Býr til factory til þess að opna tengingu við gagnagrunninn
+     */
+    private static SessionFactory factory;
+    static {
+        factory = new Configuration()
+                .configure()
+                .addAnnotatedClass(Booking.class)
+                .addAnnotatedClass(Trip.class)
+                .buildSessionFactory();
+    }
+
+    /**
+     * Sækir current session
+     * @return
+     */
+    public static Session getSession() {
+        return factory.openSession();
+    }
+
+
+    /**
+     * Lokar tengingunni við gagnagrunninn
+     */
+    public static void close() {
+        factory.close();
+    }
+
+
+    /**
      * Keyra í til þess að búa til töflur í gagnagrunni
      * @param args
      */
     public static void main(String[] args) {
-
-       Trip trip = new Trip();
-
-       Booking booking = new Booking();
-
-       addTrip(trip);
-       addBooking(booking);
     }
-
 
     /**
      * Bætir við bókun í gagnagrunn
@@ -43,20 +62,17 @@ public class DBManager {
      */
     public static Long addBooking(Booking booking) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Booking.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
+        Session session = getSession();
 
         try {
 
             session.beginTransaction();
 
+            //session.persist(booking);
             session.save(booking);
 
             session.getTransaction().commit();
+            session.close();
 
         } catch (HibernateException hibernateEx) {
             try {
@@ -65,13 +81,10 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
             }
             return booking.bookingNo;
-        }
     }
+
 
     /**
      * Bætir við ferð í gagnagrunninn
@@ -91,9 +104,10 @@ public class DBManager {
         try {
             session.beginTransaction();
 
-            session.save(trip);
+            session.persist(trip);
 
             session.getTransaction().commit();
+            session.close();
 
         } catch (HibernateException hibernateEx) {
             try {
@@ -102,13 +116,10 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
             }
             return true;
         }
-    }
+
 
     /**
      * Bætir við Review í gagnagrunninn
@@ -128,9 +139,10 @@ public class DBManager {
         try {
             session.beginTransaction();
 
-            session.save(review);
+            session.persist(review);
 
             session.getTransaction().commit();
+            session.close();
 
         } catch (HibernateException hibernateEx) {
             try {
@@ -139,12 +151,8 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            return true;
         }
+        return true;
     }
 
     /**
@@ -155,12 +163,7 @@ public class DBManager {
      */
     public static boolean deleteTrip(Long tripId) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Booking.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
+        Session session = getSession();
 
         session.beginTransaction();
         try {
@@ -169,6 +172,9 @@ public class DBManager {
             session.delete(trip);
 
             session.getTransaction().commit();
+
+            session.close();
+
         } catch (HibernateException hibernateEx) {
             try {
                 session.getTransaction().rollback();
@@ -176,12 +182,8 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            return true;
         }
+        return true;
     }
 
     /**
@@ -192,20 +194,18 @@ public class DBManager {
      */
     public static boolean deleteBooking(Long bookingNo) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Booking.class)
-                .buildSessionFactory();
 
-        Session session = factory.openSession();
+        Session session = getSession();
 
         session.beginTransaction();
+
         try {
             Booking booking = session.get(Booking.class, bookingNo);
 
             session.delete(booking);
 
             session.getTransaction().commit();
+            session.close();
         } catch (HibernateException hibernateEx) {
             try {
                 session.getTransaction().rollback();
@@ -213,12 +213,8 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            return true;
         }
+        return true;
     }
 
     /**
@@ -229,12 +225,8 @@ public class DBManager {
 
     public static Booking getBooking(Long bookingNo) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Booking.class)
-                .buildSessionFactory();
 
-        Session session = factory.openSession();
+        Session session = getSession();
 
         session.beginTransaction();
 
@@ -244,6 +236,8 @@ public class DBManager {
             booking = session.get(Booking.class, bookingNo);
 
             session.getTransaction().commit();
+            session.close();
+
 
         } catch (HibernateException hibernateEx) {
             try {
@@ -252,12 +246,8 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
             }
-            return booking;
-        }
+        return booking;
     }
 
     /**
@@ -267,12 +257,7 @@ public class DBManager {
      */
     public static Trip getTrip(Long tripId) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Trip.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
+        Session session = getSession();
 
         session.beginTransaction();
 
@@ -281,6 +266,7 @@ public class DBManager {
             trip = session.get(Trip.class, tripId);
 
             session.getTransaction().commit();
+            session.close();
         } catch (HibernateException hibernateEx) {
             try {
                 session.getTransaction().rollback();
@@ -288,12 +274,8 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            return trip;
         }
+        return trip;
     }
 
     /**
@@ -304,12 +286,8 @@ public class DBManager {
 
     public static Review getReview(Long reviewId) {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Review.class)
-                .buildSessionFactory();
 
-        Session session = factory.openSession();
+        Session session = getSession();
 
         session.beginTransaction();
 
@@ -318,6 +296,7 @@ public class DBManager {
         try {
             review = session.get(Review.class, reviewId);
             session.getTransaction().commit();
+            session.close();
         } catch (HibernateException hibernateEx) {
             try {
                 session.getTransaction().rollback();
@@ -325,12 +304,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
             }
-            return review;
-        }
+        return review;
+
     }
 
     /**
@@ -339,13 +315,7 @@ public class DBManager {
      */
     public static List<Trip> getAllTrips() {
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Trip.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
-
+        Session session = getSession();
         session.beginTransaction();
 
         //List result = session.createQuery("from trip")getResultList();

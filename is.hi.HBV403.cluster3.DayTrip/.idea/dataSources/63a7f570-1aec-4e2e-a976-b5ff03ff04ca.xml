@@ -912,178 +912,98 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="230" parent="2" name="PERSON">
+    <table id="230" parent="2" name="trip">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="231" parent="2" name="booking">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="232" parent="2" name="trip">
-      <Engine>MyISAM</Engine>
-    </table>
-    <column id="233" parent="230" name="id">
+    <column id="231" parent="230" name="tripID">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="230" name="email">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="235" parent="230" name="firstName">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="236" parent="230" name="lastName">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="237" parent="230" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="238" parent="231" name="bookingNo">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="239" parent="231" name="isEmpty">
-      <Position>2</Position>
-      <DataType>bit(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="231" name="noGuest">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="241" parent="231" name="emailAddress">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="242" parent="231" name="firstName">
-      <Position>5</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="243" parent="231" name="lastName">
-      <Position>6</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="244" parent="231" name="tripID">
-      <Position>7</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="245" parent="231" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>bookingNo</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="246" parent="232" name="tripID">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="247" parent="232" name="availableSeats">
+    <column id="232" parent="230" name="availableSeats">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="232" name="coupleFriendly">
+    <column id="233" parent="230" name="coupleFriendly">
       <Position>3</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="232" name="familyFriendly">
+    <column id="234" parent="230" name="familyFriendly">
       <Position>4</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="232" name="groupFriendly">
+    <column id="235" parent="230" name="groupFriendly">
       <Position>5</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="232" name="reviews">
+    <column id="236" parent="230" name="tripDescription">
       <Position>6</Position>
-      <DataType>tinyblob|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="252" parent="232" name="tripDescription">
-      <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="232" name="tripDifficulty">
+    <column id="237" parent="230" name="tripDifficulty">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="238" parent="230" name="tripEndDate">
       <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="254" parent="232" name="tripEndDate">
-      <Position>9</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="232" name="tripLocation">
+    <column id="239" parent="230" name="tripLocation">
+      <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="230" name="tripName">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="232" name="tripName">
+    <column id="241" parent="230" name="emailAddress">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="232" name="emailAddress">
+    <column id="242" parent="230" name="firstName">
       <Position>12</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="232" name="firstName">
+    <column id="243" parent="230" name="lastName">
       <Position>13</Position>
-      <DataType>varchar(10)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="232" name="lastName">
+    <column id="244" parent="230" name="tripPrice">
       <Position>14</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="260" parent="232" name="tripPrice">
-      <Position>15</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="232" name="tripStartDate">
-      <Position>16</Position>
+    <column id="245" parent="230" name="tripStartDate">
+      <Position>15</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="232" name="wheelchairAccess">
-      <Position>17</Position>
+    <column id="246" parent="230" name="wheelchairAccess">
+      <Position>16</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="263" parent="232" name="PRIMARY">
+    <key id="247" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>tripID</ColNames>
       <Primary>1</Primary>
