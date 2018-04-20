@@ -5,7 +5,6 @@ import javax.persistence.Table;
 
 
 @Embeddable
-@Table(name = "person")
 public class Person {
 
     public String firstName;

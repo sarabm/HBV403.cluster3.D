@@ -1,7 +1,6 @@
 package storage;
 
 import control.Booking;
-import model.Review;
 import model.Trip;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -16,7 +15,6 @@ import java.util.List;
  * Sér um að setja, sækja og eyða gögnum í gagnagrunn.
  */
 public class DBManager {
-
 
     /**
      * Býr til factory til þess að opna tengingu við gagnagrunninn
@@ -46,14 +44,6 @@ public class DBManager {
         factory.close();
     }
 
-
-    /**
-     * Keyra í til þess að búa til töflur í gagnagrunni
-     * @param args
-     */
-    public static void main(String[] args) {
-    }
-
     /**
      * Bætir við bókun í gagnagrunn
      * Skilar Long gildi með bókunarnúmeri
@@ -67,8 +57,6 @@ public class DBManager {
         try {
 
             session.beginTransaction();
-
-            //session.persist(booking);
             session.save(booking);
 
             session.getTransaction().commit();
@@ -122,41 +110,6 @@ public class DBManager {
         }
         }
 
-
-    /**
-     * Bætir við Review í gagnagrunninn
-     * Skilar true/false ef gekk/gekk ekki
-     * @param review
-     * @return
-     */
-    public static boolean addReview(Review review) {
-
-        SessionFactory factory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Review.class)
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
-
-        try {
-            session.beginTransaction();
-
-            session.persist(review);
-
-            session.getTransaction().commit();
-            session.close();
-
-        } catch (HibernateException hibernateEx) {
-            try {
-                session.getTransaction().rollback();
-            } catch (RuntimeException runtimeEx) {
-                System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
-            }
-            hibernateEx.printStackTrace();
-        } finally {
-            return true;
-        }
-    }
 
     /**
      * Eyðir ferð úr gagnagrunni
@@ -287,38 +240,6 @@ public class DBManager {
 
     }
 
-    /**
-     *
-     * @param reviewId
-     * @return
-     */
-
-    public static Review getReview(Long reviewId) {
-
-
-        Session session = getSession();
-
-        session.beginTransaction();
-
-        Review review = new Review();
-
-        try {
-            review = session.get(Review.class, reviewId);
-            session.getTransaction().commit();
-            session.close();
-        } catch (HibernateException hibernateEx) {
-            try {
-                session.getTransaction().rollback();
-            } catch (RuntimeException runtimeEx) {
-                System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
-            }
-            hibernateEx.printStackTrace();
-            } finally {
-            return review;
-        }
-
-
-    }
 
     /**
      * Sækir allar ferðir í gagnagrunn
@@ -346,9 +267,15 @@ public class DBManager {
         return result;
     }
 
+    /**
+     * Uppfærir fjölsa lausra sæta í ferð
+     * @param tripId
+     * @param noGuests
+     * @return
+     */
     public static boolean updateTrip(Long tripId, int noGuests){
-        Session session = getSession();
 
+        Session session = getSession();
         session.beginTransaction();
 
         try {
@@ -377,6 +304,5 @@ public class DBManager {
             return  true;
         }
     }
-
-    }
+}
 
