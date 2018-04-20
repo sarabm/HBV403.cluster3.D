@@ -8,11 +8,12 @@ public class Filter {
     public Float priceMin;
     public Float priceMax;
     public Integer tripDifficulty;
+    public Integer customers;
     public Boolean wheelChairAccess;
     public Boolean familyFriendly;
     public Boolean coupleFriendly;
     public Boolean groupFriendly;
-    public String location;
+    public String searchString;
 
     public Filter() {
     }

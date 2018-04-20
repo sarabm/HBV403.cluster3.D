@@ -27,14 +27,13 @@ public class Trip {
     public boolean familyFriendly;
     public boolean coupleFriendly;
     public boolean groupFriendly;
+    //public List<Review> reviews;
+    public String tripLocation;
+    public int availableSeats;
 
     @Embedded
     public Person tripOwner;
 
-
-    //public List<Review> reviews;
-    public String tripLocation;
-    public int availableSeats;
 
 
     public Trip() {
