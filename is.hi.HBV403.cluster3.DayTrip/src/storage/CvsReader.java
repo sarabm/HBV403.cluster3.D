@@ -17,7 +17,7 @@ import java.util.List;
  */
     public class CvsReader
     {
-        public static void main(String args[])
+        public static boolean readInData()
         {
 
             BufferedReader br = null;
@@ -104,6 +104,7 @@ import java.util.List;
                     System.out.println("Error occured while closing the BufferedReader");
                     ie.printStackTrace();
                 }
+                return true;
             }
         }
     }
