@@ -5,7 +5,6 @@ import model.Person;
 import model.Trip;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,9 +13,9 @@ import java.util.List;
 
 
 /**
- *
+ *Les inn dummy gögn og setur inn í gagnagrunn
  */
-    public class cvsReader
+    public class CvsReader
     {
         public static void main(String args[])
         {
