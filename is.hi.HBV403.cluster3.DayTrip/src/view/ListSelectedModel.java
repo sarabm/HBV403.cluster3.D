@@ -29,7 +29,6 @@ public class ListSelectedModel implements ChangeListener {
     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
         Parent root;
         Stage stage;
-        System.out.println(oldValue);
         for (Trip t : tripList) {
             if (newValue.toString().equals(t.tripName)) {
                 trip = t;
@@ -59,7 +58,6 @@ public class ListSelectedModel implements ChangeListener {
         } else {
             TripController viewingTripWindow = this.viewingTripLoader.getController();
             viewingTripWindow.makeTab(trip);
-
         }
     }
 }
