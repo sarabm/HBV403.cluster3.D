@@ -1,10 +1,12 @@
 package view;
 
+import storage.CvsReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import storage.CvsReader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +25,10 @@ public class DayTripUI extends Application {
     }
 
     public static void main(String[] args) {
+        //Lesum inn gögn
+        CvsReader.readInData();
+
+        //Keyrm upp viðmótið
         launch(args);
     }
 

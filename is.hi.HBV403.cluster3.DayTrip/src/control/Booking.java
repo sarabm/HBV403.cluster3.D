@@ -90,8 +90,6 @@ public class Booking {
         System.out.println("Á að vera false: " + b.isEmpty);
 
 
-        //tengja trip Id við review ID
-
     }*/
 
 

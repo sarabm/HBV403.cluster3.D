@@ -4,18 +4,20 @@ import control.Booking;
 import model.Person;
 import model.Trip;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class cvsReader
+
+/**
+ *Les inn dummy gögn og setur inn í gagnagrunn
+ */
+    public class CvsReader
     {
-        public static void main(String args[])
+        public static boolean readInData()
         {
 
             BufferedReader br = null;
@@ -23,8 +25,8 @@ import java.util.List;
             try
             {
                 //Reading the csv file ATH muna að breyta slóðinni!
-                br = new BufferedReader(new FileReader("/Users/lenovo/desktop/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/trips.csv"));
-                br2 = new BufferedReader(new FileReader("/Users/lenovo/desktop/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/bookings.csv"));
+               br = new BufferedReader(new FileReader(".//files/trips.csv"));
+               br2 = new BufferedReader(new FileReader("./files/bookings.csv"));
 
                 //Create List for holding trip objects
                 List<Trip> tripList = new ArrayList<Trip>();
@@ -102,6 +104,7 @@ import java.util.List;
                     System.out.println("Error occured while closing the BufferedReader");
                     ie.printStackTrace();
                 }
+                return true;
             }
         }
     }

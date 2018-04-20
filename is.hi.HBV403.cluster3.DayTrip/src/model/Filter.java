@@ -2,6 +2,10 @@ package model;
 
 import java.util.Date;
 
+/**
+ * Klasi sem heldur utan um leitarskilyrði fyrir ferðir í viðmótinu
+ */
+
 public class Filter {
     public Date tripStartDate;
     public Date tripEndDate;
