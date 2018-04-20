@@ -81,8 +81,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-            }
+            } finally {
             return booking.bookingNo;
+        }
     }
 
 
@@ -116,8 +117,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-            }
+            } finally {
             return true;
+        }
         }
 
 
@@ -151,8 +153,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
+        } finally {
+            return true;
         }
-        return true;
     }
 
     /**
@@ -182,8 +185,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
+        } finally {
+            return true;
         }
-        return true;
     }
 
     /**
@@ -213,8 +217,10 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
+        } finally {
+            return true;
         }
-        return true;
+
     }
 
     /**
@@ -246,8 +252,9 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-            }
-        return booking;
+            } finally {
+            return booking;
+        }
     }
 
     /**
@@ -274,8 +281,10 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
+        } finally {
+            return trip;
         }
-        return trip;
+
     }
 
     /**
@@ -304,8 +313,10 @@ public class DBManager {
                 System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
             }
             hibernateEx.printStackTrace();
-            }
-        return review;
+            } finally {
+            return review;
+        }
+
 
     }
 
@@ -318,17 +329,16 @@ public class DBManager {
         Session session = getSession();
         session.beginTransaction();
 
-        //List result = session.createQuery("from trip")getResultList();
-        // UPDATED: Create CriteriaBuilder
+        //Create CriteriaBuilder
         CriteriaBuilder builder = session.getCriteriaBuilder();
 
-        // UPDATED: Create CriteriaQuery
+        //Create CriteriaQuery
         CriteriaQuery<Trip> criteria = builder.createQuery(Trip.class);
 
-        // UPDATED: Specify criteria root
+        //Specify criteria root
         criteria.from(Trip.class);
 
-        // UPDATED: Execute query
+        //Execute query
         List<Trip> result = session.createQuery(criteria).getResultList();
 
         session.getTransaction().commit();
@@ -336,5 +346,37 @@ public class DBManager {
         return result;
     }
 
+    public static boolean updateTrip(Long tripId, int noGuests){
+        Session session = getSession();
 
-}
+        session.beginTransaction();
+
+        try {
+            Trip t = session.get(Trip.class, tripId);
+            int available = t.availableSeats;
+            int seats = available - noGuests;
+
+            if (seats > 0){
+                t.availableSeats = seats;
+            }
+            else {
+                throw new IndexOutOfBoundsException();
+            }
+
+            session.getTransaction().commit();
+            session.close();
+
+        } catch (HibernateException hibernateEx) {
+            try {
+                session.getTransaction().rollback();
+            } catch (RuntimeException runtimeEx) {
+                System.err.printf("Couldn't Roll Back Transaction", runtimeEx);
+            }
+            hibernateEx.printStackTrace();
+        } finally {
+            return  true;
+        }
+    }
+
+    }
+
