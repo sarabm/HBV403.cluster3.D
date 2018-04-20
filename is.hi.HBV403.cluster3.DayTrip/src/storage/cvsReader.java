@@ -23,8 +23,8 @@ import java.util.List;
             try
             {
                 //Reading the csv file ATH muna að breyta slóðinni!
-                br = new BufferedReader(new FileReader("/Users/saramars/IdeaProjects/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/trips.csv"));
-                br2 = new BufferedReader(new FileReader("/Users/saramars/IdeaProjects/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/bookings.csv"));
+                br = new BufferedReader(new FileReader("/Users/lenovo/desktop/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/trips.csv"));
+                br2 = new BufferedReader(new FileReader("/Users/lenovo/desktop/HBV403.cluster3.D/is.hi.HBV403.cluster3.DayTrip/src/bookings.csv"));
 
                 //Create List for holding trip objects
                 List<Trip> tripList = new ArrayList<Trip>();

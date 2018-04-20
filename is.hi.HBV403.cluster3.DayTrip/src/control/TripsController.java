@@ -14,8 +14,8 @@ import java.util.List;
  * sem viðfang, ef tilviksbreyta í Filterer null þá er ekki tekið mark á 
  * þeirri síun sem sú breyta á að gera
  */
-public class TripController {
-    public TripController() {
+public class TripsController {
+    public TripsController() {
     }
 
     public static List<Trip> searchTrips(Filter filter) {
@@ -28,17 +28,19 @@ public class TripController {
             if (filter.groupFriendly != null && filter.groupFriendly != trip.groupFriendly) continue;
             if (filter.wheelChairAccess != null && filter.wheelChairAccess != trip.wheelchairAccess) continue;
             if (filter.tripDifficulty != null && filter.tripDifficulty < trip.tripDifficulty) continue;
-            if (filter.priceMax != null && filter.priceMax < trip.tripPrice) continue;
-            if (filter.priceMin != null && filter.priceMin > trip.tripPrice) continue;
+            if (filter.priceMax != null && filter.priceMax > trip.tripPrice) continue;
+            if (filter.priceMin != null && filter.priceMin < trip.tripPrice) continue;
             if (filter.tripStartDate != null && filter.tripStartDate.after(trip.tripStartDate)) continue;
             if (filter.tripEndDate != null && filter.tripEndDate.before(trip.tripEndDate)) continue;
+            if(filter.customers != null && trip.availableSeats - filter.customers < 0) continue;
+            if(filter.searchString != null && !trip.tripLocation.contains(filter.searchString) && !trip.tripLocation.contains(filter.searchString)) continue;
             trips.add(trip);
         }
         return trips;
     }
 
     /*
-     // Prófa TripController
+     // Prófa TripsController
     public static void main(String[] args) throws ParseException {
 
         Filter f = new Filter();
