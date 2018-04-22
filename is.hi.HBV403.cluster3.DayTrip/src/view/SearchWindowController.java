@@ -12,25 +12,17 @@ public class SearchWindowController implements Controller{
     private Button forwardbutton;
 
     @FXML
-    private JFXTextField locationTXT;
+    private JFXTextField searchString;
 
     public void forwardButton() throws IOException {
-        ListController.setLocation(locationTXT.getText());
+        ListController.setLocation(searchString.getText());
         Stage stage = (Stage) forwardbutton.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("List.fxml"),"SearchWindow.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("List.fxml"), "SearchWindow.fxml");
     }
+
     public void createTrip() throws IOException {
         Stage stage = (Stage) forwardbutton.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"SearchWindow.fxml");
-    }
-    public void updateTrip() throws IOException {
-        Stage stage = (Stage) forwardbutton.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"),"SearchWindow.fxml");
-        DayTripUI.changeStage(stage, getClass().getResource("UpdateTrip.fxml"),"SearchWindow.fxml");
-    }
-    public void bookingService() throws IOException {
-        Stage stage = (Stage) forwardbutton.getScene().getWindow();
-        DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"),"SearchWindow.fxml");
+        DayTripUI.changeStage(stage, getClass().getResource("CreateTrip.fxml"), "SearchWindow.fxml");
     }
 
 

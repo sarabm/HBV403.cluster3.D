@@ -1,5 +1,6 @@
 package view;
 
+import storage.CvsReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,14 +11,6 @@ import java.io.IOException;
 import java.net.URL;
 
 public class DayTripUI extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SearchWindow.fxml"));
-        primaryStage.setTitle("daytrip.exe");
-        primaryStage.setScene(new Scene(root, 820, 535));
-        primaryStage.show();
-    }
 
     public static void changeStage(Stage stage, URL url, String prev) throws IOException {
         Parent root;
@@ -30,9 +23,20 @@ public class DayTripUI extends Application {
         stage.show();
     }
 
-
     public static void main(String[] args) {
+        //Lesum inn gögn
+        CvsReader.readInData();
+
+        //Keyrm upp viðmótið
         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("SearchWindow.fxml"));
+        primaryStage.setTitle("daytrip.exe");
+        primaryStage.setScene(new Scene(root, 820, 535));
+        primaryStage.show();
     }
 
 }

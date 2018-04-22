@@ -14,20 +14,11 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
+<?import view.NumericTextField?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CreateTripController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="Booking">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Trip Manager">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Back">
                     <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
                     <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
@@ -58,7 +49,7 @@
                                               <Insets right="10.0" />
                                           </FlowPane.margin>
                                       </Label>
-                                      <TextField prefHeight="31.0" prefWidth="209.0" />
+                                      <TextField fx:id="title" prefHeight="31.0" prefWidth="209.0" />
                                   </children>
                               </FlowPane>
                         <FlowPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="121.0" prefHeight="55.0" prefWidth="377.0">
@@ -68,7 +59,7 @@
                                     <Insets right="10.0" />
                                  </FlowPane.margin>
                               </Label>
-                              <TextField fx:id="location"  prefHeight="31.0" prefWidth="211.0">
+                              <TextField fx:id="location" prefHeight="31.0" prefWidth="211.0">
                                  <FlowPane.margin>
                                     <Insets />
                                  </FlowPane.margin>
@@ -96,7 +87,7 @@
                                               <Insets right="10.0" />
                                           </FlowPane.margin>
                                       </Label>
-                                      <TextField fx:id="personEmail"  prefHeight="31.0" prefWidth="210.0">
+                                      <TextField fx:id="personEmail" prefHeight="31.0" prefWidth="210.0">
                                           <FlowPane.margin>
                                               <Insets />
                                           </FlowPane.margin>
@@ -110,11 +101,11 @@
                                     <Insets right="10.0" />
                                  </FlowPane.margin>
                               </Label>
-                              <TextField fx:id="price"  prefHeight="31.0" prefWidth="125.0">
+                              <NumericTextField fx:id="price" prefHeight="31.0" prefWidth="125.0">
                                  <FlowPane.margin>
                                     <Insets />
                                  </FlowPane.margin>
-                              </TextField>
+                              </NumericTextField>
                            </children>
                         </FlowPane>
                              <FlowPane alignment="CENTER_LEFT" layoutX="10.0" layoutY="240.0" prefHeight="87.0" prefWidth="384.0" rowValignment="TOP">
@@ -154,9 +145,9 @@
                                     <FlowPane prefHeight="45.0" prefWidth="327.0">
                                         <children>
                                             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="53.0" text="From" />
-                                            <DatePicker prefHeight="25.0" prefWidth="110.0" />
+                                            <DatePicker fx:id="dateFrom" prefHeight="25.0" prefWidth="110.0" />
                                             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="21.0" prefWidth="48.0" text="To" />
-                                            <DatePicker prefHeight="25.0" prefWidth="110.0" />
+                                            <DatePicker fx:id="dateTo" prefHeight="25.0" prefWidth="110.0" />
                                         </children>
                                     </FlowPane>
                            </children>
@@ -168,11 +159,11 @@
                                     <Insets right="10.0" />
                                  </FlowPane.margin>
                               </Label>
-                              <TextField fx:id="availableSeats"  prefHeight="31.0" prefWidth="175.0">
+                              <NumericTextField fx:id="availableSeats" prefHeight="31.0" prefWidth="175.0">
                                  <FlowPane.margin>
                                     <Insets />
                                  </FlowPane.margin>
-                              </TextField>
+                              </NumericTextField>
                            </children>
                         </FlowPane>
                         <FlowPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="105.0" prefHeight="62.0" prefWidth="312.0">
@@ -195,7 +186,7 @@
                                     <Insets right="10.0" />
                                  </FlowPane.margin>
                               </Label>
-                              <TextField fx:id="description" prefHeight="82.0" prefWidth="303.0">
+                              <TextField fx:id="description" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="303.0">
                                  <FlowPane.margin>
                                     <Insets />
                                  </FlowPane.margin>
@@ -208,7 +199,7 @@
                 </FlowPane>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="10.0" layoutY="51.0" orientation="VERTICAL" prefHeight="47.0" prefWidth="176.0" rowValignment="TOP">
                <children>
-                        <JFXButton fx:id="createNewTrip" prefHeight="31.0" prefWidth="124.0" onAction="#createNewTrip" text="Create Trip" />
+                        <JFXButton fx:id="createNewTrip" onAction="#createNewTrip" prefHeight="31.0" prefWidth="124.0" text="Create Trip" />
                </children>
             </FlowPane>
             </children>

@@ -1,17 +1,15 @@
 package model;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Embeddable
-@Table(name = "person")
 public class Person {
 
-    private String emailAddress;
     public String firstName;
     public String lastName;
+    private String emailAddress;
 
     public Person() {
     }
