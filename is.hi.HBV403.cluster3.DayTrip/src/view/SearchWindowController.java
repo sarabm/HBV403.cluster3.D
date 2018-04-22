@@ -33,6 +33,7 @@ public class SearchWindowController implements Controller{
         DayTripUI.changeStage(stage, getClass().getResource("BookingService.fxml"),"SearchWindow.fxml");
     }
 
+
     @Override
     public void setPrev(String prev) {
 

@@ -66,12 +66,6 @@
                         <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About Booking" />
-                        <MenuItem mnemonicParsing="false" text="About Trip Creation" />
-                    </items>
-                </Menu>
             </menus>
         </MenuBar>
     </top>

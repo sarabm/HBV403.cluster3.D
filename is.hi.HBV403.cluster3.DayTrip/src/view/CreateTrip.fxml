@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -9,6 +12,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CreateTripController">
     <top>
@@ -24,11 +28,6 @@
                         <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About Trip Creation" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Back">
                     <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
                     <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
@@ -37,51 +36,181 @@
         </MenuBar>
     </top>
     <center>
-        <FlowPane alignment="CENTER" prefHeight="271.0" prefWidth="354.0">
+        <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="271.0" prefWidth="354.0">
             <children>
-                <FlowPane alignment="CENTER" layoutX="10.0" layoutY="88.0" prefHeight="231.0" prefWidth="425.0">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="47.0" prefWidth="176.0" rowValignment="TOP">
+               <children>
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="114.0" text="Create a Trip">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+               </children>
+            </FlowPane>
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="10.0" layoutY="88.0" orientation="VERTICAL" prefHeight="378.0" prefWidth="769.0">
                     <children>
-                        <FlowPane alignment="BOTTOM_CENTER" prefHeight="78.0" prefWidth="386.0">
-                            <children>
-                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="183.0" text="Title " textAlignment="RIGHT">
-                                    <FlowPane.margin>
-                                        <Insets right="10.0" />
-                                    </FlowPane.margin>
-                                </Label>
-                                <TextField prefHeight="31.0" prefWidth="190.0" />
-                            </children>
+                  <FlowPane prefHeight="383.0" prefWidth="419.0">
+                     <children>
+                              <FlowPane alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="376.0">
+                                  <children>
+                                      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="41.0" text="Title " textAlignment="RIGHT">
+                                          <FlowPane.margin>
+                                              <Insets right="10.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <TextField fx:id="title" prefHeight="31.0" prefWidth="209.0" />
+                                  </children>
+                              </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="121.0" prefHeight="55.0" prefWidth="377.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="124.0" text="Location">
+                                 <FlowPane.margin>
+                                    <Insets right="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="location"  prefHeight="31.0" prefWidth="211.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </TextField>
+                           </children>
                         </FlowPane>
-                        <FlowPane alignment="CENTER" prefHeight="74.0" prefWidth="418.0">
-                            <children>
-                                <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="177.0" text="Full name of owner">
-                                    <FlowPane.margin>
-                                        <Insets right="15.0" />
-                                    </FlowPane.margin>
-                                </Label>
-                                <TextField prefHeight="31.0" prefWidth="192.0">
-                                    <FlowPane.margin>
-                                        <Insets />
-                                    </FlowPane.margin>
-                                </TextField>
-                            </children>
+                              <FlowPane alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="378.0">
+                                  <children>
+                                      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="128.0" text="Full name of owner">
+                                          <FlowPane.margin>
+                                              <Insets right="15.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <TextField fx:id="personName" prefHeight="31.0" prefWidth="210.0">
+                                          <FlowPane.margin>
+                                              <Insets />
+                                          </FlowPane.margin>
+                                      </TextField>
+                                  </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="378.0">
+                                  <children>
+                                      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="145.0" text="Email address of owner">
+                                          <FlowPane.margin>
+                                              <Insets right="10.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <TextField fx:id="personEmail"  prefHeight="31.0" prefWidth="210.0">
+                                          <FlowPane.margin>
+                                              <Insets />
+                                          </FlowPane.margin>
+                                      </TextField>
+                                  </children>
+                              </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="176.0" prefHeight="55.0" prefWidth="293.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="43.0" text="Price">
+                                 <FlowPane.margin>
+                                    <Insets right="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="price"  prefHeight="31.0" prefWidth="125.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </TextField>
+                           </children>
                         </FlowPane>
-                        <FlowPane alignment="TOP_CENTER" layoutX="10.0" layoutY="88.0" prefHeight="48.0" prefWidth="418.0">
-                            <children>
-                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="182.0" text="Email address of owner">
-                                    <FlowPane.margin>
-                                        <Insets right="10.0" />
-                                    </FlowPane.margin>
-                                </Label>
-                                <TextField prefHeight="31.0" prefWidth="192.0">
-                                    <FlowPane.margin>
-                                        <Insets />
-                                    </FlowPane.margin>
-                                </TextField>
-                            </children>
+                             <FlowPane alignment="CENTER_LEFT" layoutX="10.0" layoutY="240.0" prefHeight="87.0" prefWidth="384.0" rowValignment="TOP">
+                                 <children>
+                                     <JFXCheckBox fx:id="couplesTrip" prefHeight="21.0" prefWidth="137.0" text="Couples trip">
+                                         <FlowPane.margin>
+                                             <Insets bottom="20.0" left="40.0" right="20.0" />
+                                         </FlowPane.margin>
+                                     </JFXCheckBox>
+                                     <JFXCheckBox fx:id="familyTrip" layoutX="30.0" layoutY="10.0" text="Family friendly">
+                                         <FlowPane.margin>
+                                             <Insets bottom="20.0" right="20.0" />
+                                         </FlowPane.margin>
+                                     </JFXCheckBox>
+                                     <JFXCheckBox fx:id="groupTrip" layoutX="142.0" layoutY="10.0" prefHeight="18.0" prefWidth="96.0" text="Group trip">
+                                         <FlowPane.margin>
+                                             <Insets left="40.0" right="61.0" />
+                                         </FlowPane.margin>
+                                     </JFXCheckBox>
+                                     <JFXCheckBox fx:id="wheelchairAccess" prefHeight="18.0" prefWidth="182.0" text="Wheelchair accessibility" />
+                                 </children>
+                                 <FlowPane.margin>
+                                     <Insets bottom="20.0" />
+                                 </FlowPane.margin>
+                             </FlowPane>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="381.0" prefWidth="293.0">
+                     <children>
+                        <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="70.0" prefWidth="279.0" rowValignment="TOP">
+                           <children>
+                              <Label prefHeight="50.0" prefWidth="309.0" text="Date:">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                                    <FlowPane prefHeight="45.0" prefWidth="327.0">
+                                        <children>
+                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="53.0" text="From" />
+                                            <DatePicker fx:id="dateFrom" prefHeight="25.0" prefWidth="110.0" />
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="21.0" prefWidth="48.0" text="To" />
+                                            <DatePicker fx:id="dateTo" prefHeight="25.0" prefWidth="110.0" />
+                                        </children>
+                                    </FlowPane>
+                           </children>
                         </FlowPane>
-                        <JFXButton fx:id="confirmSignUp" prefHeight="31.0" prefWidth="124.0" text="Create Trip" />
+                        <FlowPane alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="312.0">
+                           <children>
+                              <Label prefHeight="62.0" prefWidth="112.0" text="Number of available seats" textOverrun="CLIP" wrapText="true">
+                                 <FlowPane.margin>
+                                    <Insets right="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="availableSeats"  prefHeight="31.0" prefWidth="175.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </TextField>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="105.0" prefHeight="62.0" prefWidth="312.0">
+                           <children>
+                              <Label contentDisplay="TOP" prefHeight="62.0" prefWidth="112.0" text="Difficulty" textOverrun="CLIP" wrapText="true">
+                                 <FlowPane.margin>
+                                    <Insets right="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <ComboBox fx:id="difficultyCombo" prefHeight="27.0" prefWidth="176.0" visibleRowCount="5">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets></ComboBox>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="123.0" prefWidth="322.0">
+                           <children>
+                              <Label contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" text=" Description">
+                                 <FlowPane.margin>
+                                    <Insets right="10.0" />
+                                 </FlowPane.margin>
+                              </Label>
+                              <TextField fx:id="description" prefHeight="82.0" prefWidth="303.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </TextField>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </FlowPane>
                     </children>
                 </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="10.0" layoutY="51.0" orientation="VERTICAL" prefHeight="47.0" prefWidth="176.0" rowValignment="TOP">
+               <children>
+                        <JFXButton fx:id="createNewTrip" prefHeight="31.0" prefWidth="124.0" onAction="#createNewTrip" text="Create Trip" />
+               </children>
+            </FlowPane>
             </children>
         </FlowPane>
     </center>

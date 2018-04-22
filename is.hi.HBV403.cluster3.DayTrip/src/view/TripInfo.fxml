@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TripInfoController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Booking">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#bookingService" text="View Booking" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Trip Manager">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#createTrip" text="Create Trip" />
+                    </items>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#updateTrip" text="Update Trip" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Back">
+                    <MenuItem mnemonicParsing="false" onAction="#searchPage" text="Back to search" />
+                    <MenuItem mnemonicParsing="false" onAction="#back" text="Back to last page" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <FlowPane fx:id="tripInfoPane" alignment="CENTER" orientation="VERTICAL" prefHeight="271.0" prefWidth="354.0">
+        </FlowPane>
+    </center>
+</BorderPane>
