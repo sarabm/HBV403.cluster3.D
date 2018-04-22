@@ -5,12 +5,18 @@ Keyra verkefni:
 
 1.
 
-Setja up localhost mySQL gagnagrunn:
+Setja up localhost mySQL gagnagrunn: 
+
 Port: 3306
+
 Nafn: Cluster3_DDB
+
 User: root
+
 PW: 1234
+
 Skeman heitir Cluster3_DDB -> hægt að breyta nafni í "hibernate.cfg.xml"
+
 
 <property name="hibernate.connection.url">jdbc:mysql://localhost/cluster3_DDB</property>
 
